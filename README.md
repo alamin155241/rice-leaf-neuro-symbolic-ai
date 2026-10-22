@@ -42,3 +42,7 @@ See [client instructions](frontend_flutter/README.md), [API contract](docs/API_V
 ## Publication scope
 
 This repository contains a curated source snapshot. Local environments, model binaries, training images, personal files, notebooks with execution outputs, and manuscript drafts are excluded. Artifact evidence and source attribution are retained. Full inference needs the model described above; hardware or physical-device validation is not implied by publishing source.
+
+## Publication checks (22 October 2026)
+
+Backend: 122 tests passed, 2 skipped in the available local environment. One API test now uses a temporary model checksum fixture, so it does not require private weights. Flutter: 24 tests passed and 3 existing widget tests failed (duplicate text matches and a prediction/reset view expectation). Analyzer reported one deprecated DropdownButtonFormField value parameter. These client issues remain open; this is a research source release, not a validated production app.
