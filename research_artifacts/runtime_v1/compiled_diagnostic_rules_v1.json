@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "name": "Source-Backed Compiled Diagnostic Rules",
+    "version": "1.1.0",
+    "scope": "Research-only Brown Spot and Leaf Blast phenotype coverage",
+    "source_artifact": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+    "non_invention_statement": "These records compile existing source-backed phenotype statements into conservative diagnostic conjunctions. They do not introduce new scientific evidence or promote runtime state."
+  },
+  "rules": [
+    {
+      "rule_id": "EA_RULE_30859DE496",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion is on leaf blade",
+          "operator": "COMPILED_FROM_SOURCE"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "lesion is oval",
+          "operator": "COMPILED_FROM_SOURCE"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "necrosis is present",
+          "operator": "COMPILED_FROM_SOURCE"
+        },
+        {
+          "condition_id": "C4",
+          "raw_text": "lesion has chlorotic halo",
+          "operator": "COMPILED_FROM_SOURCE"
+        }
+      ],
+      "condition_text": "lesion is on leaf blade AND lesion is oval AND necrosis is present AND lesion has chlorotic halo",
+      "conclusion": {
+        "raw_text": "Evidence supports diagnosis of Brown Spot",
+        "target_class": "Brown Spot",
+        "action": "COMPILED_DIAGNOSTIC_SUPPORT"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "conservative_inheritance_from_source_rule",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate the compiled phenotype conjunction against local Brown Spot images and expert labels before any state promotion.",
+        "implementation_status": "RESEARCH_ONLY_COMPILED_RULE",
+        "data_quality_flags": "NO_EVIDENCE_ID; COMPILED_FROM_EXISTING_RULE_DIRECTION"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0914",
+        "master_record_ids": [
+          "MKI_0914"
+        ],
+        "implementation_record_id": "BSP_IMPL_293",
+        "implementation_record_ids": [
+          "BSP_IMPL_293"
+        ],
+        "source_record_id": "BSP_RULE_002",
+        "source_record_ids": [
+          "BSP_RULE_002"
+        ],
+        "source_rule_ids": [
+          "EA_RULE_EE3FB34441"
+        ],
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_numbers": [
+          "294"
+        ],
+        "evidence_ids": [],
+        "original_extracted_values": [
+          "Category=Diagnostic; IF=lesion is on leaf blade and is oval and necrotic; THEN=lesion is surrounded by chlorotic halo; Entities=leaf blade, lesion, chlorotic halo; Values=oval, necrotic; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=rice leaves"
+        ],
+        "compilation_basis": "The existing Brown Spot-specific diagnostic record directly links leaf-blade, oval, necrotic lesions to a chlorotic halo. The compiled rule conservatively requires both the source condition and its phenotype outcome before diagnostic scoring."
+      }
+    },
+    {
+      "rule_id": "EA_RULE_2516F683E3",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion is spindle shaped",
+          "operator": "COMPILED_FROM_SOURCE"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "lesion center is gray OR lesion center is white",
+          "operator": "COMPILED_FROM_SOURCE"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "lesion margin is brown",
+          "operator": "COMPILED_FROM_SOURCE"
+        }
+      ],
+      "condition_text": "lesion is spindle shaped AND (lesion center is gray OR lesion center is white) AND lesion margin is brown",
+      "conclusion": {
+        "raw_text": "Evidence supports diagnosis of Leaf Blast",
+        "target_class": "Leaf Blast",
+        "action": "COMPILED_DIAGNOSTIC_SUPPORT"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "conservative_inheritance_from_source_rules",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate the compiled lesion-shape and color conjunction against local Leaf Blast images and expert labels before any state promotion.",
+        "implementation_status": "RESEARCH_ONLY_COMPILED_RULE",
+        "data_quality_flags": "NO_EVIDENCE_ID; COMPILED_FROM_TWO_EXISTING_LEAF_BLAST_SPECIFIC_RECORDS"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0229",
+        "master_record_ids": [
+          "MKI_0229",
+          "MKI_0230"
+        ],
+        "implementation_record_id": "RBL_IMPL_229",
+        "implementation_record_ids": [
+          "RBL_IMPL_229",
+          "RBL_IMPL_230"
+        ],
+        "source_record_id": "RBL_RULE_001",
+        "source_record_ids": [
+          "RBL_RULE_001",
+          "RBL_RULE_002"
+        ],
+        "source_rule_ids": [
+          "EA_RULE_610FE9355D",
+          "EA_RULE_9EDFE97BF1"
+        ],
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_numbers": [
+          "230",
+          "231"
+        ],
+        "evidence_ids": [],
+        "original_extracted_values": [
+          "Category=Lesion Identification; IF=Rice leaf is infected by the blast fungus; THEN=Leaf blast is seen as elliptical spots resembling a spindle shape; Entities=Rice leaf; blast lesion shape; Values=Spindle shape; elliptical spots; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+          "Category=Lesion Identification; IF=Leaf blast spot is present; THEN=Center of spot is grayish or whitish and margin is brown or reddish-brown; Entities=Lesion center color; lesion margin color; Values=Grayish or whitish; brown or reddish-brown; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC"
+        ],
+        "compilation_basis": "Two existing Leaf-Blast-specific lesion-identification records jointly provide spindle lesion shape and gray/white center with brown/reddish-brown margin. Their circular prerequisites are discarded; all observable phenotype outputs are required as a conservative conjunction."
+      }
+    }
+  ]
+}

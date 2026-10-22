@@ -1,0 +1,10 @@
+{
+  "sample_id": "",
+  "class_probabilities": {
+    "Brown Spot": 0.0,
+    "Healthy Rice Leaf": 0.0,
+    "Leaf Blast": 0.0,
+    "Leaf Scald": 0.0,
+    "Narrow Brown Leaf Spot": 0.0
+  }
+}

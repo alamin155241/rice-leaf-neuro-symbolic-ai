@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0.0",
+  "hash_algorithm": "SHA-256",
+  "provenance": "Byte-for-byte copies from NeuroSymbolic_App_Integration_Package",
+  "files": [
+    {
+      "relative_path": "phase6/reasoning_test_results_v1.json",
+      "size_bytes": 17415,
+      "sha256": "E617500BD1FB80CEAF8F2DD85E781054B6EDFFC1FBEA0DE035B000EA1084965D"
+    },
+    {
+      "relative_path": "phase6/reasoning_trace_v1.csv",
+      "size_bytes": 4813,
+      "sha256": "502D99938B1CF54DAD001B620A75CD2C045EC3ADF0D6C0AF2C75844542314F0C"
+    },
+    {
+      "relative_path": "phase7/fusion_results_v1.json",
+      "size_bytes": 20860,
+      "sha256": "012DC5879E46D62DA03EE7763237772405027CA7EB2DE57DC69D7D1AD9E1850E"
+    },
+    {
+      "relative_path": "phase7/conflict_stress_test_results_v1.json",
+      "size_bytes": 5187,
+      "sha256": "912D2479DD8E04E38D86CA1BD15013FCBB0A4120870D857A0EFA672762D261EA"
+    }
+  ]
+}

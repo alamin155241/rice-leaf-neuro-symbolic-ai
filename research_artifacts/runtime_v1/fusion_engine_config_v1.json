@@ -1,0 +1,30 @@
+{
+  "engine_name": "Adaptive CNN-Symbolic Fusion Engine",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-07-30T07:15:27.950950+00:00",
+  "classes": [
+    "Brown Spot",
+    "Healthy Rice Leaf",
+    "Leaf Blast",
+    "Leaf Scald",
+    "Narrow Brown Leaf Spot"
+  ],
+  "uncertainty_thresholds": {
+    "minimum_final_confidence": 0.45,
+    "minimum_final_margin": 0.08
+  },
+  "weight_bounds": {
+    "minimum_modality_weight": 0.1,
+    "maximum_modality_weight": 0.9
+  },
+  "cnn_reliability_formula": {
+    "top_probability_weight": 0.5,
+    "margin_weight": 0.3,
+    "inverse_entropy_weight": 0.2
+  },
+  "symbolic_reliability_formula": {
+    "top_score_weight": 0.5,
+    "margin_weight": 0.3,
+    "rule_support_weight": 0.2
+  }
+}

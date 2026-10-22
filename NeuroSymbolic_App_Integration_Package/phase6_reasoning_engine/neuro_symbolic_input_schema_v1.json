@@ -1,0 +1,47 @@
+{
+  "sample_id": "",
+  "cnn_prediction": {
+    "predicted_class": "",
+    "confidence": 0.0,
+    "class_probabilities": {
+      "Brown Spot": 0.0,
+      "Healthy Rice Leaf": 0.0,
+      "Leaf Blast": 0.0,
+      "Leaf Scald": 0.0,
+      "Narrow Brown Leaf Spot": 0.0
+    }
+  },
+  "visual_features": {
+    "lesion_present": null,
+    "lesion_shape": null,
+    "lesion_color": null,
+    "necrosis_present": null,
+    "lesion_center_color": null,
+    "lesion_margin_color": null,
+    "lesion_size": null,
+    "lesion_width_mm": null,
+    "lesion_distribution": null,
+    "leaf_region": null,
+    "halo_present": null,
+    "halo_color": null,
+    "zonation_present": null,
+    "blighting": null,
+    "dryness": null,
+    "coalescence": null,
+    "yellowing": null,
+    "visual_status": null,
+    "vigor": null,
+    "leaf_age": null,
+    "growth_stage": null,
+    "other_observations": []
+  },
+  "environment_context": {
+    "enabled": false,
+    "temperature_c": null,
+    "relative_humidity": null,
+    "leaf_wetness": null,
+    "dew_period_hours": null,
+    "field_condition": null,
+    "nutrient_status": null
+  }
+}

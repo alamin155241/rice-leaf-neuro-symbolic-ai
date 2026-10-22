@@ -1,0 +1,61 @@
+{
+  "api_version": "2.0.0",
+  "runtime_mode": "production",
+  "class": "leaf_blast",
+  "confidence": 0.55,
+  "final_decision": "uncertain",
+  "trust_level": "low",
+  "severity": "moderate",
+  "cnn_result": {
+    "prediction": "leaf_blast",
+    "display_name": "Leaf Blast",
+    "confidence": 0.55
+  },
+  "safety_result": {
+    "low_confidence": true,
+    "ambiguity_detected": false,
+    "contradiction_detected": false,
+    "requires_manual_review": true,
+    "warnings": ["CNN confidence is below the system threshold."]
+  },
+  "symbolic_result": {
+    "status": "insufficient_observation_evidence",
+    "prediction": null,
+    "matched_rule_ids": [],
+    "matched_rules": []
+  },
+  "fusion_result": {
+    "final_prediction": null,
+    "display_name": "Uncertain",
+    "candidate_prediction": "leaf_blast",
+    "candidate_display_name": "Leaf Blast",
+    "final_confidence": 0.55,
+    "cnn_weight": 1,
+    "symbolic_weight": 0,
+    "abstention_policy_applied": true,
+    "agreement_status": "safety_forced_uncertainty",
+    "conflict_status": "none",
+    "requires_manual_review": true
+  },
+  "management_result": {
+    "recommendation": "Retake the image.",
+    "warning": "Manual review required.",
+    "actionable": true,
+    "advisory_only": false,
+    "validation_status": "system_safety_rule",
+    "runtime_state": "SYSTEM_POLICY",
+    "sources": ["system_inference_safety_policy"]
+  },
+  "visual_evidence": {
+    "segmentation_validated": false,
+    "disclaimer": "Grad-CAM attention is a model-attention heuristic and is not validated lesion segmentation."
+  },
+  "explanation": {
+    "summary": "Diagnosis withheld; candidate Leaf Blast requires review.",
+    "matched_observed_features": [],
+    "matched_rule_ids": [],
+    "evidence_ids": [],
+    "citations": [],
+    "limitations": []
+  }
+}

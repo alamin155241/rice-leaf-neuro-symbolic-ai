@@ -1,0 +1,37 @@
+{
+  "engine_name": "Evidence-Aware Neuro-Symbolic Rice Disease Reasoner",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-07-30T06:56:14.730702+00:00",
+  "source_rule_file": "/content/drive/My Drive/capstone/Final_capstone/phase5_rule_engineering/evidence_aware_rules_v1.json",
+  "supported_classes": [
+    "Brown Spot",
+    "Healthy Rice Leaf",
+    "Leaf Blast",
+    "Leaf Scald",
+    "Narrow Brown Leaf Spot"
+  ],
+  "supported_modes": [
+    "research",
+    "staging",
+    "production"
+  ],
+  "state_factors": {
+    "ACTIVE_CANDIDATE": 1.0,
+    "STAGING_CANDIDATE": 0.9,
+    "EVIDENCE_SUPPORTED_HOLD": 0.75
+  },
+  "type_factors": {
+    "diagnostic": 1.0,
+    "healthy_baseline": 0.95,
+    "severity": 0.65,
+    "supporting_knowledge": 0.55,
+    "environmental_support": 0.4
+  },
+  "policy": {
+    "management_rules_used_for_diagnosis": false,
+    "environment_rules_require_context": true,
+    "incomplete_rules_executed": false,
+    "cnn_fusion_enabled": false,
+    "missing_features_assumed": false
+  }
+}

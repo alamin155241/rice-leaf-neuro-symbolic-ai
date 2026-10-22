@@ -1,0 +1,17 @@
+{
+  "class": "leaf_scald",
+  "final_decision": "leaf_scald",
+  "confidence": 0.91,
+  "recommendation": "Monitor and consult local guidance.",
+  "warning": "Legacy advisory.",
+  "trust_level": "high",
+  "severity": "mild",
+  "infected_area_percent": 4,
+  "attention_coverage_percent": 4,
+  "all_probabilities": {"leaf_scald": 0.91},
+  "matched_rules": [],
+  "reasoning_notes": [],
+  "gradcam_heatmap_base64": null,
+  "gradcam_overlay_base64": null,
+  "lesion_mask_base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+}

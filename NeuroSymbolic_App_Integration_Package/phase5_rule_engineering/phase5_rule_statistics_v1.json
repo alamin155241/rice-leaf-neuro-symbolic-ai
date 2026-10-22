@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-07-30T06:10:51.418468+00:00",
+  "total_master_records": 927,
+  "rule_relevant_records": 245,
+  "complete_if_then_records": 57,
+  "incomplete_records": 188,
+  "unique_rules": 61,
+  "exact_duplicates": 184,
+  "runtime_active_candidates": 1,
+  "class_counts": {
+    "Brown Spot": 16,
+    "Leaf Blast": 14,
+    "Healthy Rice Leaf": 12,
+    "Leaf Scald": 11,
+    "Narrow Brown Leaf Spot": 8
+  },
+  "rule_type_counts": {
+    "diagnostic": 21,
+    "environmental_support": 13,
+    "healthy_baseline": 11,
+    "supporting_knowledge": 8,
+    "management": 7,
+    "severity": 1
+  },
+  "runtime_state_counts": {
+    "EVIDENCE_SUPPORTED_HOLD": 41,
+    "STAGING_CANDIDATE": 15,
+    "HOLD_PARSE_INCOMPLETE": 4,
+    "ACTIVE_CANDIDATE": 1
+  },
+  "validation_counts": {
+    "PASS": 57,
+    "REVIEW": 4
+  }
+}

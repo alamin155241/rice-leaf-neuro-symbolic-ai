@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observation_vocabulary_schema_v1.json",
+  "title": "Rice Leaf Observation Vocabulary v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "generation_policy",
+    "fields",
+    "limitations"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.2.0"
+    },
+    "generation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "invented_values_allowed",
+        "semantic_guessing_allowed",
+        "canonicalization",
+        "alias_merge_policy",
+        "sources"
+      ],
+      "properties": {
+        "invented_values_allowed": {
+          "const": false
+        },
+        "semantic_guessing_allowed": {
+          "const": false
+        },
+        "canonicalization": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "alias_merge_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/field"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "alias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "source",
+        "source_reference"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "enum": [
+            "explicit_normalization_alias",
+            "source_condition_surface_form",
+            "canonical_phenotype_surface_form"
+          ]
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_rule_ids",
+        "evidence_ids",
+        "record_ids",
+        "source_ids",
+        "citations",
+        "source_texts",
+        "source_artifacts"
+      ],
+      "properties": {
+        "source_rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "record_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "source_texts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "categorical_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_value",
+        "display_name",
+        "original_values",
+        "aliases",
+        "provenance"
+      ],
+      "properties": {
+        "canonical_value": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alias"
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "input_types",
+        "categorical_values_available",
+        "allowed_values",
+        "enum_validated",
+        "boolean_support",
+        "boolean_allowed_values",
+        "boolean_values_origin",
+        "numeric_constraints",
+        "field_source",
+        "limitations"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "string",
+            "boolean",
+            "number",
+            "mixed",
+            "array"
+          ]
+        },
+        "input_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "string",
+              "boolean",
+              "number",
+              "array"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "categorical_values_available": {
+          "type": "boolean"
+        },
+        "allowed_values": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/categorical_value"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "enum_validated": {
+          "type": "boolean"
+        },
+        "boolean_support": {
+          "type": "boolean"
+        },
+        "boolean_allowed_values": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": true
+                },
+                {
+                  "const": false
+                }
+              ],
+              "items": false
+            }
+          ]
+        },
+        "boolean_values_origin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "numeric_constraints": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "minimum": {
+                  "type": "number"
+                },
+                "maximum": {
+                  "type": "number"
+                }
+              },
+              "minProperties": 1
+            }
+          ]
+        },
+        "field_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

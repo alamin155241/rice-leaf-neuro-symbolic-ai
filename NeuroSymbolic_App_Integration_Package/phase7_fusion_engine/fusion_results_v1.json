@@ -1,0 +1,589 @@
+[
+  {
+    "sample_id": "TEST_LEAF_BLAST_001",
+    "cnn": {
+      "prediction": "Leaf Blast",
+      "probability": 0.91,
+      "reliability": 0.8667,
+      "margin": 0.88,
+      "entropy": 0.2613,
+      "class_probabilities": {
+        "Brown Spot": 0.03,
+        "Healthy Rice Leaf": 0.01,
+        "Leaf Blast": 0.91,
+        "Leaf Scald": 0.03,
+        "Narrow Brown Leaf Spot": 0.02
+      }
+    },
+    "symbolic": {
+      "prediction": "Leaf Blast",
+      "score": 0.5093,
+      "reliability": 0.2522,
+      "margin": 0.0186,
+      "matched_rule_count": 2,
+      "disease_scores": {
+        "Brown Spot": 0.0,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.5093,
+        "Leaf Scald": 0.0,
+        "Narrow Brown Leaf Spot": 0.4907
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.7746,
+      "symbolic_weight": 0.2254,
+      "weight_reason": "CNN reliability clearly exceeded symbolic reliability.",
+      "class_scores": {
+        "Brown Spot": 0.0232,
+        "Healthy Rice Leaf": 0.0077,
+        "Leaf Blast": 0.8197,
+        "Leaf Scald": 0.0232,
+        "Narrow Brown Leaf Spot": 0.1261
+      },
+      "final_prediction": "Leaf Blast",
+      "final_confidence": 0.8197,
+      "second_choice": "Narrow Brown Leaf Spot",
+      "second_choice_score": 0.1261,
+      "final_margin": 0.6936,
+      "decision_status": "AGREEMENT"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Leaf Blast",
+      "symbolic_prediction": "Leaf Blast",
+      "resolution": "CNN and symbolic reasoning supported the same diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [
+        {
+          "rule_id": "EA_RULE_9EDFE97BF1",
+          "class_name": "Leaf Blast",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "Leaf blast spot is present",
+          "conclusion_text": "Center of spot is grayish or whitish and margin is brown or reddish-brown",
+          "rule_weight": 0.9,
+          "score_contribution": 0.54,
+          "match": {
+            "fired": true,
+            "condition_score": 1.0,
+            "conclusion_score": 0.4286,
+            "combined_match": 0.8,
+            "evidence_mode": "COMPOUND_PHENOTYPE_PATTERN",
+            "matched_observations": [
+              "acute lesion with gray white center",
+              "leaf blast spot present"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0230"
+        },
+        {
+          "rule_id": "EA_RULE_D35B922621",
+          "class_name": "Narrow Brown Leaf Spot",
+          "rule_type": "diagnostic",
+          "runtime_state": "STAGING_CANDIDATE",
+          "condition_text": "Narrow Brown Leaf Spot is present",
+          "conclusion_text": "affects leaf blades",
+          "rule_weight": 0.8,
+          "score_contribution": 0.5202,
+          "match": {
+            "fired": true,
+            "condition_score": 0.6,
+            "conclusion_score": 0.95,
+            "combined_match": 0.7225,
+            "evidence_mode": "COMPOUND_PHENOTYPE_PATTERN",
+            "matched_observations": [
+              "leaf blade",
+              "leaf blast spot present"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0422"
+        }
+      ],
+      "reasoning_confidence_label": "LOW_OR_CONFLICTED",
+      "warnings": [
+        "Research mode may use rules that are not runtime-active.",
+        "This engine does not replace agronomist or plant-pathologist assessment.",
+        "CNN fusion is intentionally deferred to Phase 7."
+      ]
+    }
+  },
+  {
+    "sample_id": "TEST_BROWN_SPOT_001",
+    "cnn": {
+      "prediction": "Brown Spot",
+      "probability": 0.89,
+      "reliability": 0.8412,
+      "margin": 0.86,
+      "entropy": 0.3091,
+      "class_probabilities": {
+        "Brown Spot": 0.89,
+        "Healthy Rice Leaf": 0.02,
+        "Leaf Blast": 0.03,
+        "Leaf Scald": 0.03,
+        "Narrow Brown Leaf Spot": 0.03
+      }
+    },
+    "symbolic": {
+      "prediction": "Brown Spot",
+      "score": 1.0,
+      "reliability": 0.9,
+      "margin": 1.0,
+      "matched_rule_count": 2,
+      "disease_scores": {
+        "Brown Spot": 1.0,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.0,
+        "Leaf Scald": 0.0,
+        "Narrow Brown Leaf Spot": 0.0
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.4831,
+      "symbolic_weight": 0.5169,
+      "weight_reason": "CNN and symbolic reliability were comparable.",
+      "class_scores": {
+        "Brown Spot": 0.9469,
+        "Healthy Rice Leaf": 0.0097,
+        "Leaf Blast": 0.0145,
+        "Leaf Scald": 0.0145,
+        "Narrow Brown Leaf Spot": 0.0145
+      },
+      "final_prediction": "Brown Spot",
+      "final_confidence": 0.9469,
+      "second_choice": "Leaf Blast",
+      "second_choice_score": 0.0145,
+      "final_margin": 0.9324,
+      "decision_status": "AGREEMENT"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Brown Spot",
+      "symbolic_prediction": "Brown Spot",
+      "resolution": "CNN and symbolic reasoning supported the same diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [
+        {
+          "rule_id": "EA_RULE_EE3FB34441",
+          "class_name": "Brown Spot",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "lesion is on leaf blade and is oval and necrotic",
+          "conclusion_text": "lesion is surrounded by chlorotic halo",
+          "rule_weight": 0.9,
+          "score_contribution": 0.6559,
+          "match": {
+            "fired": true,
+            "condition_score": 0.9833,
+            "conclusion_score": 0.95,
+            "combined_match": 0.9717,
+            "evidence_mode": "COMPOUND_PHENOTYPE_PATTERN",
+            "matched_observations": [
+              "brown necrotic",
+              "leaf blade",
+              "lesion shape oval",
+              "yellow halo"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0914"
+        },
+        {
+          "rule_id": "EA_RULE_B87B7A8741",
+          "class_name": "Brown Spot",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "leaf spots are fully developed",
+          "conclusion_text": "centers are gray or whitish",
+          "rule_weight": 0.9,
+          "score_contribution": 0.5962,
+          "match": {
+            "fired": true,
+            "condition_score": 1.0,
+            "conclusion_score": 0.6667,
+            "combined_match": 0.8833,
+            "evidence_mode": "COMPOUND_PHENOTYPE_PATTERN",
+            "matched_observations": [
+              "fully developed leaf spots",
+              "gray white"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0915"
+        }
+      ],
+      "reasoning_confidence_label": "HIGH",
+      "warnings": [
+        "Research mode may use rules that are not runtime-active.",
+        "This engine does not replace agronomist or plant-pathologist assessment.",
+        "CNN fusion is intentionally deferred to Phase 7."
+      ]
+    }
+  },
+  {
+    "sample_id": "TEST_LEAF_SCALD_001",
+    "cnn": {
+      "prediction": "Leaf Scald",
+      "probability": 0.88,
+      "reliability": 0.8272,
+      "margin": 0.84,
+      "entropy": 0.3239,
+      "class_probabilities": {
+        "Brown Spot": 0.03,
+        "Healthy Rice Leaf": 0.01,
+        "Leaf Blast": 0.04,
+        "Leaf Scald": 0.88,
+        "Narrow Brown Leaf Spot": 0.04
+      }
+    },
+    "symbolic": {
+      "prediction": "Leaf Scald",
+      "score": 1.0,
+      "reliability": 0.9,
+      "margin": 1.0,
+      "matched_rule_count": 2,
+      "disease_scores": {
+        "Brown Spot": 0.0,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.0,
+        "Leaf Scald": 1.0,
+        "Narrow Brown Leaf Spot": 0.0
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.4789,
+      "symbolic_weight": 0.5211,
+      "weight_reason": "CNN and symbolic reliability were comparable.",
+      "class_scores": {
+        "Brown Spot": 0.0144,
+        "Healthy Rice Leaf": 0.0048,
+        "Leaf Blast": 0.0192,
+        "Leaf Scald": 0.9425,
+        "Narrow Brown Leaf Spot": 0.0192
+      },
+      "final_prediction": "Leaf Scald",
+      "final_confidence": 0.9425,
+      "second_choice": "Leaf Blast",
+      "second_choice_score": 0.0192,
+      "final_margin": 0.9234,
+      "decision_status": "AGREEMENT"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Leaf Scald",
+      "symbolic_prediction": "Leaf Scald",
+      "resolution": "CNN and symbolic reasoning supported the same diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [
+        {
+          "rule_id": "EA_RULE_8C8A54B145",
+          "class_name": "Leaf Scald",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "lesion starts at leaf tip or edges AND lesion is characterized by zonation AND lesion occurs on mature leaves",
+          "conclusion_text": "evidence supports diagnosis of Leaf Scald",
+          "rule_weight": 0.9,
+          "score_contribution": 0.6525,
+          "match": {
+            "fired": true,
+            "condition_score": 0.9667,
+            "conclusion_score": 0.95,
+            "combined_match": 0.9667,
+            "evidence_mode": "DIRECT_DIAGNOSTIC",
+            "matched_observations": [
+              "leaf scald",
+              "lesion characterized by zonation",
+              "lesion starts at leaf tip or edge",
+              "mature leaf"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0600"
+        },
+        {
+          "rule_id": "EA_RULE_CDDC7A936F",
+          "class_name": "Leaf Scald",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "lesion is more or less oblong AND lesion has light brown halos",
+          "conclusion_text": "lesion is characteristic of Leaf Scald",
+          "rule_weight": 0.9,
+          "score_contribution": 0.6412,
+          "match": {
+            "fired": true,
+            "condition_score": 0.95,
+            "conclusion_score": 0.95,
+            "combined_match": 0.95,
+            "evidence_mode": "DIRECT_DIAGNOSTIC",
+            "matched_observations": [
+              "leaf scald",
+              "light brown",
+              "oblong"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0602"
+        }
+      ],
+      "reasoning_confidence_label": "HIGH",
+      "warnings": [
+        "Research mode may use rules that are not runtime-active.",
+        "This engine does not replace agronomist or plant-pathologist assessment.",
+        "CNN fusion is intentionally deferred to Phase 7."
+      ]
+    }
+  },
+  {
+    "sample_id": "TEST_NBLS_001",
+    "cnn": {
+      "prediction": "Narrow Brown Leaf Spot",
+      "probability": 0.75,
+      "reliability": 0.6525,
+      "margin": 0.6,
+      "entropy": 0.5126,
+      "class_probabilities": {
+        "Brown Spot": 0.05,
+        "Healthy Rice Leaf": 0.01,
+        "Leaf Blast": 0.15,
+        "Leaf Scald": 0.04,
+        "Narrow Brown Leaf Spot": 0.75
+      }
+    },
+    "symbolic": {
+      "prediction": "Narrow Brown Leaf Spot",
+      "score": 0.6281,
+      "reliability": 0.4909,
+      "margin": 0.2562,
+      "matched_rule_count": 2,
+      "disease_scores": {
+        "Brown Spot": 0.0,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.0,
+        "Leaf Scald": 0.3719,
+        "Narrow Brown Leaf Spot": 0.6281
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.5707,
+      "symbolic_weight": 0.4293,
+      "weight_reason": "CNN and symbolic reliability were comparable.",
+      "class_scores": {
+        "Brown Spot": 0.0285,
+        "Healthy Rice Leaf": 0.0057,
+        "Leaf Blast": 0.0856,
+        "Leaf Scald": 0.1825,
+        "Narrow Brown Leaf Spot": 0.6977
+      },
+      "final_prediction": "Narrow Brown Leaf Spot",
+      "final_confidence": 0.6977,
+      "second_choice": "Leaf Scald",
+      "second_choice_score": 0.1825,
+      "final_margin": 0.5152,
+      "decision_status": "AGREEMENT"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Narrow Brown Leaf Spot",
+      "symbolic_prediction": "Narrow Brown Leaf Spot",
+      "resolution": "CNN and symbolic reasoning supported the same diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [
+        {
+          "rule_id": "EA_RULE_D35B922621",
+          "class_name": "Narrow Brown Leaf Spot",
+          "rule_type": "diagnostic",
+          "runtime_state": "STAGING_CANDIDATE",
+          "condition_text": "Narrow Brown Leaf Spot is present",
+          "conclusion_text": "affects leaf blades",
+          "rule_weight": 0.8,
+          "score_contribution": 0.684,
+          "match": {
+            "fired": true,
+            "condition_score": 0.95,
+            "conclusion_score": 0.95,
+            "combined_match": 0.95,
+            "evidence_mode": "COMPOUND_PHENOTYPE_PATTERN",
+            "matched_observations": [
+              "leaf blade",
+              "narrow brown leaf spot"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0422"
+        },
+        {
+          "rule_id": "EA_RULE_CDDC7A936F",
+          "class_name": "Leaf Scald",
+          "rule_type": "diagnostic",
+          "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+          "condition_text": "lesion is more or less oblong AND lesion has light brown halos",
+          "conclusion_text": "lesion is characteristic of Leaf Scald",
+          "rule_weight": 0.9,
+          "score_contribution": 0.405,
+          "match": {
+            "fired": true,
+            "condition_score": 0.6,
+            "conclusion_score": 0.25,
+            "combined_match": 0.6,
+            "evidence_mode": "DIRECT_DIAGNOSTIC",
+            "matched_observations": [
+              "leaf blade",
+              "lesion color light brown",
+              "light brown"
+            ]
+          },
+          "source_document_id": "IRRI2018_FFD",
+          "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+          "evidence_ids": [],
+          "master_record_id": "MKI_0602"
+        }
+      ],
+      "reasoning_confidence_label": "MODERATE",
+      "warnings": [
+        "Research mode may use rules that are not runtime-active.",
+        "This engine does not replace agronomist or plant-pathologist assessment.",
+        "CNN fusion is intentionally deferred to Phase 7."
+      ]
+    }
+  },
+  {
+    "sample_id": "TEST_HEALTHY_001",
+    "cnn": {
+      "prediction": "Healthy Rice Leaf",
+      "probability": 0.95,
+      "reliability": 0.9211,
+      "margin": 0.93,
+      "entropy": 0.1647,
+      "class_probabilities": {
+        "Brown Spot": 0.01,
+        "Healthy Rice Leaf": 0.95,
+        "Leaf Blast": 0.01,
+        "Leaf Scald": 0.01,
+        "Narrow Brown Leaf Spot": 0.02
+      }
+    },
+    "symbolic": {
+      "prediction": "Healthy Rice Leaf",
+      "score": 1.0,
+      "reliability": 0.9,
+      "margin": 1.0,
+      "matched_rule_count": 2,
+      "disease_scores": {
+        "Brown Spot": 0.0,
+        "Healthy Rice Leaf": 1.0,
+        "Leaf Blast": 0.0,
+        "Leaf Scald": 0.0,
+        "Narrow Brown Leaf Spot": 0.0
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.5058,
+      "symbolic_weight": 0.4942,
+      "weight_reason": "CNN and symbolic reliability were comparable.",
+      "class_scores": {
+        "Brown Spot": 0.0051,
+        "Healthy Rice Leaf": 0.9747,
+        "Leaf Blast": 0.0051,
+        "Leaf Scald": 0.0051,
+        "Narrow Brown Leaf Spot": 0.0101
+      },
+      "final_prediction": "Healthy Rice Leaf",
+      "final_confidence": 0.9747,
+      "second_choice": "Narrow Brown Leaf Spot",
+      "second_choice_score": 0.0101,
+      "final_margin": 0.9646,
+      "decision_status": "AGREEMENT"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Healthy Rice Leaf",
+      "symbolic_prediction": "Healthy Rice Leaf",
+      "resolution": "CNN and symbolic reasoning supported the same diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [
+        {
+          "rule_id": "HRULE_003",
+          "class_name": "Healthy Rice Leaf",
+          "rule_type": "healthy_baseline",
+          "runtime_state": "STAGING_CANDIDATE",
+          "condition_text": "visual_status == \"Visibly_healthy\" AND vigor == \"High_vigor\"",
+          "conclusion_text": "Healthy_Rice_Leaf_Candidate",
+          "rule_weight": 0.9,
+          "score_contribution": 0.731,
+          "match": {
+            "fired": true,
+            "condition_score": 0.95,
+            "conclusion_score": 0.95,
+            "combined_match": 0.95,
+            "evidence_mode": "DIRECT_DIAGNOSTIC",
+            "matched_observations": [
+              "healthy rice leaf",
+              "high vigor",
+              "visibly healthy"
+            ]
+          },
+          "source_document_id": "UPOV_RICE_TG16_9",
+          "citation": "UPOV (2020)",
+          "evidence_ids": [
+            "HEVD_001"
+          ],
+          "master_record_id": "MKI_0611"
+        },
+        {
+          "rule_id": "HRULE_006",
+          "class_name": "Healthy Rice Leaf",
+          "rule_type": "healthy_baseline",
+          "runtime_state": "STAGING_CANDIDATE",
+          "condition_text": "lacks_symptom == \"spindle_shaped_lesions\" AND status == \"Visibly_healthy\"",
+          "conclusion_text": "Healthy_Rice_Leaf_Candidate",
+          "rule_weight": 0.8,
+          "score_contribution": 0.3933,
+          "match": {
+            "fired": true,
+            "condition_score": 0.575,
+            "conclusion_score": 0.95,
+            "combined_match": 0.575,
+            "evidence_mode": "DIRECT_DIAGNOSTIC",
+            "matched_observations": [
+              "healthy rice leaf",
+              "lacks dark brown dots",
+              "visibly healthy"
+            ]
+          },
+          "source_document_id": "UPOV_RICE_TG16_9",
+          "citation": "UPOV (2020)",
+          "evidence_ids": [
+            "HEVD_011"
+          ],
+          "master_record_id": "MKI_0617"
+        }
+      ],
+      "reasoning_confidence_label": "HIGH",
+      "warnings": [
+        "Research mode may use rules that are not runtime-active.",
+        "This engine does not replace agronomist or plant-pathologist assessment.",
+        "CNN fusion is intentionally deferred to Phase 7."
+      ]
+    }
+  }
+]

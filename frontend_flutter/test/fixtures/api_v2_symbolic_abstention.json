@@ -1,0 +1,69 @@
+{
+  "api_version": "2.0.0",
+  "runtime_mode": "research",
+  "class": "leaf_blast",
+  "confidence": 0.91,
+  "trust_level": "high",
+  "severity": "mild",
+  "cnn_result": {
+    "prediction": "leaf_blast",
+    "display_name": "Leaf Blast",
+    "confidence": 0.91
+  },
+  "observation_result": {
+    "input_mode": "image_only",
+    "provided_observations": {},
+    "normalized_observations": {},
+    "observation_validation": []
+  },
+  "visual_evidence": {
+    "attention_coverage_percent": 3.2,
+    "segmentation_validated": false,
+    "disclaimer": "Grad-CAM attention is a model-attention heuristic and is not validated lesion segmentation."
+  },
+  "safety_result": {
+    "requires_manual_review": false,
+    "warnings": []
+  },
+  "symbolic_result": {
+    "status": "insufficient_observation_evidence",
+    "prediction": null,
+    "score": 0,
+    "reliability": 0,
+    "matched_rule_ids": [],
+    "matched_rules": [],
+    "matched_evidence_ids": [],
+    "reasoning_trace": [],
+    "limitations": []
+  },
+  "fusion_result": {
+    "final_prediction": "leaf_blast",
+    "display_name": "Leaf Blast",
+    "candidate_prediction": "leaf_blast",
+    "candidate_display_name": "Leaf Blast",
+    "final_confidence": 0.91,
+    "cnn_weight": 1,
+    "symbolic_weight": 0,
+    "raw_phase7_cnn_weight": 0.9,
+    "raw_phase7_symbolic_weight": 0.1,
+    "abstention_policy_applied": true,
+    "agreement_status": "symbolic_abstention",
+    "conflict_status": "none",
+    "requires_manual_review": false
+  },
+  "management_result": {
+    "recommendation": "Retake or consult.",
+    "warning": "Advisory only.",
+    "actionable": false,
+    "advisory_only": true,
+    "sources": []
+  },
+  "explanation": {
+    "summary": "Final diagnosis: Leaf Blast.",
+    "matched_observed_features": [],
+    "matched_rule_ids": [],
+    "evidence_ids": [],
+    "citations": [],
+    "limitations": []
+  }
+}

@@ -1,0 +1,1397 @@
+{
+  "version": "1.2.0",
+  "generation_policy": {
+    "invented_values_allowed": false,
+    "semantic_guessing_allowed": false,
+    "canonicalization": [
+      "Canonical keys use lowercase snake_case.",
+      "Only exact canonical values or explicitly listed aliases are accepted for categorical fields.",
+      "Case-insensitive comparison and surrounding-whitespace trimming do not create new aliases."
+    ],
+    "alias_merge_policy": "Aliases are included only when directly implemented by SYNONYM_MAP or when approved source text is explicitly preserved as a surface form. Similar-looking concepts are not merged by inference.",
+    "sources": [
+      "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+      "research_artifacts/runtime_v1/compiled_diagnostic_rules_v1.json",
+      "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json",
+      "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP",
+      "knowledge_graph/phenotype_graph.json"
+    ]
+  },
+  "fields": {
+    "lesion_present": {
+      "type": "boolean",
+      "input_types": [
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_present",
+      "limitations": [
+        "No evidence-backed categorical string vocabulary is available for this field."
+      ]
+    },
+    "lesion_shape": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "spindle_shaped",
+          "display_name": "Spindle-shaped",
+          "original_values": [
+            "Spindle-shaped"
+          ],
+          "aliases": [
+            {
+              "value": "spindle shaped",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:spindle shaped -> spindle"
+            },
+            {
+              "value": "spindle-shaped",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:spindle-shaped -> spindle"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [],
+            "evidence_ids": [],
+            "record_ids": [],
+            "source_ids": [
+              "draft_phenotype_leaf_blast_001"
+            ],
+            "citations": [],
+            "source_texts": [
+              "Spindle-shaped or diamond-shaped lesions"
+            ],
+            "source_artifacts": [
+              "knowledge_graph/phenotype_graph.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "diamond_shaped",
+          "display_name": "Diamond-shaped",
+          "original_values": [
+            "diamond-shaped"
+          ],
+          "aliases": [
+            {
+              "value": "diamond-shaped",
+              "source": "canonical_phenotype_surface_form",
+              "source_reference": "knowledge_graph/phenotype_graph.json:draft_phenotype_leaf_blast_001"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [],
+            "evidence_ids": [],
+            "record_ids": [],
+            "source_ids": [
+              "draft_phenotype_leaf_blast_001"
+            ],
+            "citations": [],
+            "source_texts": [
+              "Spindle-shaped or diamond-shaped lesions"
+            ],
+            "source_artifacts": [
+              "knowledge_graph/phenotype_graph.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "oval",
+          "display_name": "Oval",
+          "original_values": [
+            "oval"
+          ],
+          "aliases": [
+            {
+              "value": "oval",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:oval -> oval"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_EE3FB34441"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0914",
+              "BSP_IMPL_293",
+              "BSP_RULE_002"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion is oval"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "oblong",
+          "display_name": "Oblong",
+          "original_values": [
+            "oblong"
+          ],
+          "aliases": [
+            {
+              "value": "oblong",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:oblong -> oblong"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_CDDC7A936F"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0602",
+              "LSC_IMPL_175",
+              "LSC_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion is more or less oblong"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "elongated",
+          "display_name": "Elongated",
+          "original_values": [
+            "elongated"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_FD2BA45FBC"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0426",
+              "NBLS_IMPL_185",
+              "NBLS_RULE_006"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesions are elongated"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "narrow",
+          "display_name": "Narrow",
+          "original_values": [
+            "narrow"
+          ],
+          "aliases": [
+            {
+              "value": "narrow",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:narrow -> narrow"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_83353103A2"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0423",
+              "NBLS_IMPL_182",
+              "NBLS_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "narrow brown lesions are observed"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_shape",
+      "limitations": []
+    },
+    "lesion_color": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "brown",
+          "display_name": "Brown",
+          "original_values": [
+            "brown"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_83353103A2"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0423",
+              "NBLS_IMPL_182",
+              "NBLS_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "narrow brown lesions are observed"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "light_brown",
+          "display_name": "Light brown",
+          "original_values": [
+            "light brown"
+          ],
+          "aliases": [
+            {
+              "value": "light brown",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:light brown -> light brown"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_FD2BA45FBC"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0426",
+              "NBLS_IMPL_185",
+              "NBLS_RULE_006"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "light brown"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_color",
+      "limitations": []
+    },
+    "necrosis_present": {
+      "type": "boolean",
+      "input_types": [
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined states for the source-backed necrosis phenotype, not new disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.necrosis_present",
+      "limitations": [
+        "The necrosis concept is backed by EA_RULE_EE3FB34441, MKI_0914, BSP_IMPL_293, and BSP_RULE_002; the boolean representation records user-confirmed presence or absence."
+      ]
+    },
+    "lesion_center_color": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "gray",
+          "display_name": "Gray",
+          "original_values": [
+            "grayish"
+          ],
+          "aliases": [
+            {
+              "value": "grayish",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:grayish -> gray"
+            },
+            {
+              "value": "greyish",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:greyish -> gray"
+            },
+            {
+              "value": "grey",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:grey -> gray"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_CE788DB802"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0231",
+              "RBL_IMPL_231",
+              "RBL_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "Acute lesions with grayish or whitish centers are observed on leaves"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "white",
+          "display_name": "White",
+          "original_values": [
+            "whitish"
+          ],
+          "aliases": [
+            {
+              "value": "whitish",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:whitish -> white"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_CE788DB802"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0231",
+              "RBL_IMPL_231",
+              "RBL_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "Acute lesions with grayish or whitish centers are observed on leaves"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_center_color",
+      "limitations": []
+    },
+    "lesion_margin_color": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "brown",
+          "display_name": "Brown",
+          "original_values": [
+            "Brown"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_9EDFE97BF1",
+              "EA_RULE_2516F683E3"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0230",
+              "RBL_IMPL_230",
+              "RBL_RULE_002"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD",
+              "draft_phenotype_brown_spot_001"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "margin is brown or reddish-brown",
+              "Brown margin with a paler centre"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+              "research_artifacts/runtime_v1/compiled_diagnostic_rules_v1.json",
+              "knowledge_graph/phenotype_graph.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_margin_color",
+      "limitations": []
+    },
+    "lesion_size": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "pin_head_size",
+          "display_name": "Pin-head size",
+          "original_values": [
+            "pin-head size"
+          ],
+          "aliases": [
+            {
+              "value": "pin-head size",
+              "source": "source_condition_surface_form",
+              "source_reference": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json:EA_RULE_48583020E1"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_48583020E1"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0232",
+              "RBL_IMPL_232",
+              "RBL_RULE_004"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "Blast lesions on leaves are minute brown specks of pin-head size"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_size",
+      "limitations": []
+    },
+    "lesion_width_mm": {
+      "type": "number",
+      "input_types": [
+        "number"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": false,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_width_mm",
+      "limitations": [
+        "No explicit evidence-backed numeric range is imposed by this vocabulary; the Phase 6 schema supplies the number type only."
+      ]
+    },
+    "lesion_distribution": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": false,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.lesion_distribution",
+      "limitations": [
+        "No sufficient direct categorical values were found in the approved sources; supplied text is unvalidated guided input."
+      ]
+    },
+    "leaf_region": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "leaf_blade",
+          "display_name": "Leaf blade",
+          "original_values": [
+            "leaf blade"
+          ],
+          "aliases": [
+            {
+              "value": "leaf blade",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:leaf blade -> leaf blade"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_EE3FB34441"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0914",
+              "BSP_IMPL_293",
+              "BSP_RULE_002"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion is on leaf blade"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "leaf_tip",
+          "display_name": "Leaf tip",
+          "original_values": [
+            "leaf tip"
+          ],
+          "aliases": [
+            {
+              "value": "leaf tip",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:leaf tip -> leaf tip"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_8C8A54B145"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0600",
+              "LSC_IMPL_173",
+              "LSC_RULE_001"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion starts at leaf tip or edges"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "leaf_edge",
+          "display_name": "Leaf edge",
+          "original_values": [
+            "edges"
+          ],
+          "aliases": [
+            {
+              "value": "leaf edges",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:leaf edges -> leaf edge"
+            },
+            {
+              "value": "leaf edge",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:leaf edge -> leaf edge"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_8C8A54B145"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0600",
+              "LSC_IMPL_173",
+              "LSC_RULE_001"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion starts at leaf tip or edges"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.leaf_region",
+      "limitations": []
+    },
+    "halo_present": {
+      "type": "boolean",
+      "input_types": [
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.halo_present",
+      "limitations": [
+        "No evidence-backed categorical string vocabulary is available for this field."
+      ]
+    },
+    "halo_color": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "light_brown",
+          "display_name": "Light brown",
+          "original_values": [
+            "light brown"
+          ],
+          "aliases": [
+            {
+              "value": "light brown",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:light brown -> light brown"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_CDDC7A936F"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0602",
+              "LSC_IMPL_175",
+              "LSC_RULE_003"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion has light brown halos"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "yellow",
+          "display_name": "Yellow / chlorotic",
+          "original_values": [
+            "chlorotic"
+          ],
+          "aliases": [
+            {
+              "value": "yellow",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:chlorotic -> yellow"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_EE3FB34441",
+              "EA_RULE_30859DE496"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0914",
+              "BSP_IMPL_293",
+              "BSP_RULE_002"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion is surrounded by chlorotic halo"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+              "research_artifacts/runtime_v1/compiled_diagnostic_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.halo_color",
+      "limitations": []
+    },
+    "zonation_present": {
+      "type": "boolean",
+      "input_types": [
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.zonation_present",
+      "limitations": [
+        "No evidence-backed categorical string vocabulary is available for this field."
+      ]
+    },
+    "blighting": {
+      "type": "mixed",
+      "input_types": [
+        "string",
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.blighting",
+      "limitations": [
+        "Boolean values are schema-defined. No sufficient direct categorical string vocabulary was found; supplied string text is unvalidated guided input."
+      ]
+    },
+    "dryness": {
+      "type": "mixed",
+      "input_types": [
+        "string",
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.dryness",
+      "limitations": [
+        "Boolean values are schema-defined. No sufficient direct categorical string vocabulary was found; supplied string text is unvalidated guided input."
+      ]
+    },
+    "coalescence": {
+      "type": "boolean",
+      "input_types": [
+        "boolean"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.coalescence",
+      "limitations": [
+        "No evidence-backed categorical string vocabulary is available for this field."
+      ]
+    },
+    "yellowing": {
+      "type": "mixed",
+      "input_types": [
+        "string",
+        "boolean"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "yellowing",
+          "display_name": "Yellowing",
+          "original_values": [
+            "Yellowing"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "HRULE_009"
+            ],
+            "evidence_ids": [
+              "HEVD_007"
+            ],
+            "record_ids": [
+              "MKI_0615",
+              "HIMP_006",
+              "HRULE_009"
+            ],
+            "source_ids": [
+              "CABI_PLANTWISE_DIAGNOSTIC"
+            ],
+            "citations": [
+              "Taylor (2015)"
+            ],
+            "source_texts": [
+              "leaf_age == \"Older_lower_leaves\" AND phenotype == \"yellowing\""
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": true,
+      "boolean_allowed_values": [
+        true,
+        false
+      ],
+      "boolean_values_origin": "Phase 6 input schema type; true and false are schema-defined values, not evidence-derived disease categories.",
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.yellowing",
+      "limitations": [
+        "Boolean values are schema-defined separately from the evidence-backed categorical string value."
+      ]
+    },
+    "visual_status": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "visibly_healthy",
+          "display_name": "Visibly healthy",
+          "original_values": [
+            "Visibly_healthy"
+          ],
+          "aliases": [
+            {
+              "value": "visibly healthy",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:visibly healthy -> visibly healthy"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "HRULE_003"
+            ],
+            "evidence_ids": [
+              "HEVD_001"
+            ],
+            "record_ids": [
+              "MKI_0611",
+              "HIMP_002",
+              "HONT_002"
+            ],
+            "source_ids": [
+              "UPOV_RICE_TG16_9"
+            ],
+            "citations": [
+              "UPOV (2020)"
+            ],
+            "source_texts": [
+              "visual_status == \"Visibly_healthy\""
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.visual_status",
+      "limitations": []
+    },
+    "vigor": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "high_vigor",
+          "display_name": "High vigor",
+          "original_values": [
+            "High_vigor"
+          ],
+          "aliases": [
+            {
+              "value": "high vigor",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:high vigor -> high vigor"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "HRULE_003"
+            ],
+            "evidence_ids": [
+              "HEVD_001"
+            ],
+            "record_ids": [
+              "MKI_0611",
+              "HIMP_002",
+              "HONT_002"
+            ],
+            "source_ids": [
+              "UPOV_RICE_TG16_9"
+            ],
+            "citations": [
+              "UPOV (2020)"
+            ],
+            "source_texts": [
+              "vigor == \"High_vigor\""
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.vigor",
+      "limitations": []
+    },
+    "leaf_age": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "mature_leaf",
+          "display_name": "Mature leaf",
+          "original_values": [
+            "mature leaves"
+          ],
+          "aliases": [
+            {
+              "value": "mature leaves",
+              "source": "explicit_normalization_alias",
+              "source_reference": "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP:mature leaves -> mature leaf"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_8C8A54B145"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0600",
+              "LSC_IMPL_173",
+              "LSC_RULE_001"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "lesion occurs on mature leaves"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "older_lower_leaves",
+          "display_name": "Older lower leaves",
+          "original_values": [
+            "Older_lower_leaves"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "HRULE_009"
+            ],
+            "evidence_ids": [
+              "HEVD_007"
+            ],
+            "record_ids": [
+              "MKI_0615",
+              "HIMP_006",
+              "HRULE_009"
+            ],
+            "source_ids": [
+              "CABI_PLANTWISE_DIAGNOSTIC"
+            ],
+            "citations": [
+              "Taylor (2015)"
+            ],
+            "source_texts": [
+              "leaf_age == \"Older_lower_leaves\""
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.leaf_age",
+      "limitations": []
+    },
+    "growth_stage": {
+      "type": "string",
+      "input_types": [
+        "string"
+      ],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "seedling",
+          "display_name": "Seedling",
+          "original_values": [
+            "seedling"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_8298EF820D"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0233",
+              "RBL_IMPL_233",
+              "RBL_RULE_005"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "Rice plant is infected at the seedling and early tillering stages"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "early_tillering_stages",
+          "display_name": "Early tillering stages",
+          "original_values": [
+            "early tillering stages"
+          ],
+          "aliases": [
+            {
+              "value": "early tillering stages",
+              "source": "source_condition_surface_form",
+              "source_reference": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json:EA_RULE_8298EF820D"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_8298EF820D"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0233",
+              "RBL_IMPL_233",
+              "RBL_RULE_005"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "Rice plant is infected at the seedling and early tillering stages"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "boot_to_heading",
+          "display_name": "Boot to heading",
+          "original_values": [
+            "boot to heading"
+          ],
+          "aliases": [
+            {
+              "value": "boot-to-heading",
+              "source": "source_condition_surface_form",
+              "source_reference": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json:EA_RULE_982C43680A"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_982C43680A"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0425",
+              "NBLS_IMPL_184",
+              "NBLS_RULE_005"
+            ],
+            "source_ids": [
+              "APS2026_NBLS"
+            ],
+            "citations": [
+              "American Phytopathological Society. 2026. Narrow Brown Leaf Spot of Rice. Plant Health Instructor / APS Education Center."
+            ],
+            "source_texts": [
+              "crop is main crop rice AND stage is boot-to-heading"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "late_tillering_stage",
+          "display_name": "Late tillering stage",
+          "original_values": [
+            "late tillering stage"
+          ],
+          "aliases": [
+            {
+              "value": "late tillering stage",
+              "source": "source_condition_surface_form",
+              "source_reference": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json:EA_RULE_BA85F4C28E"
+            }
+          ],
+          "provenance": {
+            "source_rule_ids": [
+              "EA_RULE_BA85F4C28E"
+            ],
+            "evidence_ids": [],
+            "record_ids": [
+              "MKI_0921",
+              "BSP_IMPL_300",
+              "BSP_RULE_009"
+            ],
+            "source_ids": [
+              "IRRI2018_FFD"
+            ],
+            "citations": [
+              "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book."
+            ],
+            "source_texts": [
+              "nitrogen is deficient at the late tillering stage"
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        },
+        {
+          "canonical_value": "vegetative_lag_phase",
+          "display_name": "Vegetative lag phase",
+          "original_values": [
+            "Vegetative_lag_phase"
+          ],
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": [
+              "HRULE_010"
+            ],
+            "evidence_ids": [
+              "HEVD_008"
+            ],
+            "record_ids": [
+              "MKI_0619",
+              "HIMP_010",
+              "HEVD_008"
+            ],
+            "source_ids": [
+              "ARKANSAS_RICE_GROWTH"
+            ],
+            "citations": [
+              "Moldenhauer et al."
+            ],
+            "source_texts": [
+              "cultivar == \"midseason\" AND growth_stage == \"vegetative_lag_phase\""
+            ],
+            "source_artifacts": [
+              "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+            ]
+          }
+        }
+      ],
+      "enum_validated": true,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.growth_stage",
+      "limitations": []
+    },
+    "other_observations": {
+      "type": "array",
+      "input_types": [
+        "array"
+      ],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "enum_validated": false,
+      "boolean_support": false,
+      "boolean_allowed_values": null,
+      "boolean_values_origin": null,
+      "numeric_constraints": null,
+      "field_source": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json:visual_features.other_observations",
+      "limitations": [
+        "Free-text observation items have no closed evidence-backed vocabulary and are unvalidated guided input."
+      ]
+    }
+  },
+  "limitations": [
+    "This vocabulary is intentionally incomplete: fields without sufficient direct categorical evidence remain explicitly unvalidated.",
+    "Boolean true/false values and the numeric type come from the Phase 6 input schema, not disease-evidence claims.",
+    "Vocabulary membership validates an observation value; it does not assert that any diagnostic rule matched or fired.",
+    "No disease category, synonym, alias, numeric boundary, or citation was invented to fill a gap."
+  ]
+}

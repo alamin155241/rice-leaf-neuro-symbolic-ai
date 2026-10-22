@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "cnn_class_order": [
+    "brown_spot",
+    "healthy",
+    "leaf_blast",
+    "leaf_scald",
+    "narrow_brown_spot"
+  ],
+  "classes": [
+    {
+      "canonical_key": "brown_spot",
+      "cnn_index": 0,
+      "research_label": "Brown Spot",
+      "display_name": "Brown Spot",
+      "class_id": "CLASS_BROWN_SPOT"
+    },
+    {
+      "canonical_key": "healthy",
+      "cnn_index": 1,
+      "research_label": "Healthy Rice Leaf",
+      "display_name": "Healthy Rice Leaf",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF"
+    },
+    {
+      "canonical_key": "leaf_blast",
+      "cnn_index": 2,
+      "research_label": "Leaf Blast",
+      "display_name": "Leaf Blast",
+      "class_id": "CLASS_LEAF_BLAST"
+    },
+    {
+      "canonical_key": "leaf_scald",
+      "cnn_index": 3,
+      "research_label": "Leaf Scald",
+      "display_name": "Leaf Scald",
+      "class_id": "CLASS_LEAF_SCALD"
+    },
+    {
+      "canonical_key": "narrow_brown_spot",
+      "cnn_index": 4,
+      "research_label": "Narrow Brown Leaf Spot",
+      "display_name": "Narrow Brown Leaf Spot",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT"
+    }
+  ]
+}

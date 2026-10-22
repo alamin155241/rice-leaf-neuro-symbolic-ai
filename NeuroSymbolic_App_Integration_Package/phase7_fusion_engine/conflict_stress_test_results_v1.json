@@ -1,0 +1,185 @@
+[
+  {
+    "sample_id": "CONFLICT_001",
+    "cnn": {
+      "prediction": "Leaf Blast",
+      "probability": 0.9,
+      "reliability": 0.8536,
+      "margin": 0.87,
+      "entropy": 0.2869,
+      "class_probabilities": {
+        "Brown Spot": 0.03,
+        "Healthy Rice Leaf": 0.02,
+        "Leaf Blast": 0.9,
+        "Leaf Scald": 0.03,
+        "Narrow Brown Leaf Spot": 0.02
+      }
+    },
+    "symbolic": {
+      "prediction": "Brown Spot",
+      "score": 0.55,
+      "reliability": 0.2485,
+      "margin": 0.1,
+      "matched_rule_count": 1,
+      "disease_scores": {
+        "Brown Spot": 0.55,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.35,
+        "Leaf Scald": 0.05,
+        "Narrow Brown Leaf Spot": 0.05
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.7745,
+      "symbolic_weight": 0.2255,
+      "weight_reason": "CNN reliability clearly exceeded symbolic reliability.",
+      "class_scores": {
+        "Brown Spot": 0.1473,
+        "Healthy Rice Leaf": 0.0155,
+        "Leaf Blast": 0.776,
+        "Leaf Scald": 0.0345,
+        "Narrow Brown Leaf Spot": 0.0268
+      },
+      "final_prediction": "Leaf Blast",
+      "final_confidence": 0.776,
+      "second_choice": "Brown Spot",
+      "second_choice_score": 0.1473,
+      "final_margin": 0.6287,
+      "decision_status": "CONFLICT_RESOLVED"
+    },
+    "conflict": {
+      "detected": true,
+      "cnn_prediction": "Leaf Blast",
+      "symbolic_prediction": "Brown Spot",
+      "resolution": "Conflict was resolved in favor of CNN using adaptive reliability weighting."
+    },
+    "explanation": {
+      "matched_rules": [],
+      "reasoning_confidence_label": "LOW_OR_CONFLICTED",
+      "warnings": []
+    },
+    "stress_test_name": "CNN_HIGH_SYMBOLIC_LOW_CONFLICT"
+  },
+  {
+    "sample_id": "CONFLICT_002",
+    "cnn": {
+      "prediction": "Brown Spot",
+      "probability": 0.4,
+      "reliability": 0.248,
+      "margin": 0.05,
+      "entropy": 0.8352,
+      "class_probabilities": {
+        "Brown Spot": 0.4,
+        "Healthy Rice Leaf": 0.05,
+        "Leaf Blast": 0.35,
+        "Leaf Scald": 0.1,
+        "Narrow Brown Leaf Spot": 0.1
+      }
+    },
+    "symbolic": {
+      "prediction": "Leaf Scald",
+      "score": 0.9,
+      "reliability": 0.86,
+      "margin": 0.7,
+      "matched_rule_count": 4,
+      "disease_scores": {
+        "Brown Spot": 0.05,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.03,
+        "Leaf Scald": 0.9,
+        "Narrow Brown Leaf Spot": 0.02
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.2238,
+      "symbolic_weight": 0.7762,
+      "weight_reason": "Symbolic reliability clearly exceeded CNN reliability.",
+      "class_scores": {
+        "Brown Spot": 0.1283,
+        "Healthy Rice Leaf": 0.0112,
+        "Leaf Blast": 0.1016,
+        "Leaf Scald": 0.721,
+        "Narrow Brown Leaf Spot": 0.0379
+      },
+      "final_prediction": "Leaf Scald",
+      "final_confidence": 0.721,
+      "second_choice": "Brown Spot",
+      "second_choice_score": 0.1283,
+      "final_margin": 0.5926,
+      "decision_status": "CONFLICT_RESOLVED"
+    },
+    "conflict": {
+      "detected": true,
+      "cnn_prediction": "Brown Spot",
+      "symbolic_prediction": "Leaf Scald",
+      "resolution": "Conflict was resolved in favor of symbolic reasoning using adaptive reliability weighting."
+    },
+    "explanation": {
+      "matched_rules": [],
+      "reasoning_confidence_label": "HIGH",
+      "warnings": []
+    },
+    "stress_test_name": "CNN_LOW_SYMBOLIC_HIGH_CONFLICT"
+  },
+  {
+    "sample_id": "CONFLICT_003",
+    "cnn": {
+      "prediction": "Brown Spot",
+      "probability": 0.24,
+      "reliability": 0.1299,
+      "margin": 0.03,
+      "entropy": 0.9954,
+      "class_probabilities": {
+        "Brown Spot": 0.24,
+        "Healthy Rice Leaf": 0.2,
+        "Leaf Blast": 0.21,
+        "Leaf Scald": 0.18,
+        "Narrow Brown Leaf Spot": 0.17
+      }
+    },
+    "symbolic": {
+      "prediction": "Uncertain",
+      "score": 0.0,
+      "reliability": 0.0,
+      "margin": 0.0,
+      "matched_rule_count": 0,
+      "disease_scores": {
+        "Brown Spot": 0.0,
+        "Healthy Rice Leaf": 0.0,
+        "Leaf Blast": 0.0,
+        "Leaf Scald": 0.0,
+        "Narrow Brown Leaf Spot": 0.0
+      }
+    },
+    "fusion": {
+      "cnn_weight": 0.9,
+      "symbolic_weight": 0.1,
+      "weight_reason": "CNN and symbolic reliability were comparable.",
+      "class_scores": {
+        "Brown Spot": 0.24,
+        "Healthy Rice Leaf": 0.2,
+        "Leaf Blast": 0.21,
+        "Leaf Scald": 0.18,
+        "Narrow Brown Leaf Spot": 0.17
+      },
+      "final_prediction": "Brown Spot",
+      "final_confidence": 0.24,
+      "second_choice": "Leaf Blast",
+      "second_choice_score": 0.21,
+      "final_margin": 0.03,
+      "decision_status": "UNCERTAIN"
+    },
+    "conflict": {
+      "detected": false,
+      "cnn_prediction": "Brown Spot",
+      "symbolic_prediction": "Uncertain",
+      "resolution": "Combined evidence was insufficient for a confident diagnosis."
+    },
+    "explanation": {
+      "matched_rules": [],
+      "reasoning_confidence_label": "INSUFFICIENT_SYMBOLIC_EVIDENCE",
+      "warnings": []
+    },
+    "stress_test_name": "BOTH_UNCERTAIN"
+  }
+]

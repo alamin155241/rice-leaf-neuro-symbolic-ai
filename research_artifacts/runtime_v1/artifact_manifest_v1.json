@@ -1,0 +1,110 @@
+{
+  "manifest_version": "1.0.0",
+  "created_at_utc": "2026-07-31T00:00:00Z",
+  "integration_software_version": "1.0.0",
+  "artifacts": [
+    {
+      "logical_name": "phase5_evidence_aware_rules",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase5_rule_engineering/evidence_aware_rules_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+      "version": "1.0.0",
+      "sha256": "9BDCD3FB73A2A4EC7F07C77133B2E88282ACDDBF4F08C9B8D10326158E985B06",
+      "role": "authoritative_runtime_rule_records"
+    },
+    {
+      "logical_name": "phase5_rule_schema",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase5_rule_engineering/rule_schema_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/rule_schema_v1.json",
+      "version": "1.0.0",
+      "sha256": "50FA2AF19EEDE6D92BA4D3ECB8DFBB6A9AC1966643752E7B64B47E86F4B92900",
+      "role": "phase5_rule_json_schema"
+    },
+    {
+      "logical_name": "compiled_diagnostic_rules",
+      "source_relative_path": "integration_compiled_from_existing_phase5_source_records",
+      "runtime_relative_path": "research_artifacts/runtime_v1/compiled_diagnostic_rules_v1.json",
+      "version": "1.1.0",
+      "sha256": "58BCAD378BDB5A4F78133E67F016737A4345C6EFD467E383337A7945B19C83AA",
+      "role": "research_only_source_backed_compiled_diagnostic_rules",
+      "source_artifacts_used": [
+        "research_artifacts/runtime_v1/evidence_aware_rules_v1.json"
+      ],
+      "generation_method": "Conservative conjunction of phenotype outputs already present in Brown Spot and Leaf Blast source-specific rule records; circular prerequisites are excluded.",
+      "invented_values_allowed": false,
+      "non_invention_statement": "Rule IDs and internal traceability IDs identify this compilation; they are not new scientific evidence or citations."
+    },
+    {
+      "logical_name": "phase6_reasoning_config",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase6_reasoning_engine/reasoning_engine_config_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/reasoning_engine_config_v1.json",
+      "version": "1.0.0",
+      "sha256": "CD66857F7D595572D568C88D654C8B422389FA8751FDFDBBD2F2754307BA67D5",
+      "role": "phase6_reasoning_engine_config"
+    },
+    {
+      "logical_name": "phase6_observation_schema",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase6_reasoning_engine/neuro_symbolic_input_schema_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json",
+      "version": "1.1.0",
+      "sha256": "05D2AEBB8FC558378051440E8CDF4A689F174CDC75612376663ECBC7626117B1",
+      "role": "phase6_observation_input_template"
+    },
+    {
+      "logical_name": "phase7_fusion_config",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase7_fusion_engine/fusion_engine_config_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/fusion_engine_config_v1.json",
+      "version": "1.0.0",
+      "sha256": "88A9ED62F3C180893C6C3BE9D880EEC348231577C0C99DE9621597BD2AD5AD51",
+      "role": "phase7_adaptive_fusion_config"
+    },
+    {
+      "logical_name": "phase7_cnn_output_schema",
+      "source_relative_path": "NeuroSymbolic_App_Integration_Package/phase7_fusion_engine/cnn_output_schema_v1.json",
+      "runtime_relative_path": "research_artifacts/runtime_v1/cnn_output_schema_v1.json",
+      "version": "1.0.0",
+      "sha256": "6A9614E9B3234AB68607CE976828D4DE5BB9D46670FA81C4F0E95635902608DB",
+      "role": "phase7_cnn_output_template"
+    },
+    {
+      "logical_name": "canonical_class_mapping",
+      "source_relative_path": "integration_generated_from_existing_cnn_class_order_and_research_labels",
+      "runtime_relative_path": "research_artifacts/runtime_v1/class_mapping_v1.json",
+      "version": "1.0.0",
+      "sha256": "DBBE1EDE6D0845B1C25F624AD8B71B5DF00EED5BCE9F78EDB902603756ECC502",
+      "role": "cnn_research_display_class_mapping"
+    },
+    {
+      "logical_name": "observation_vocabulary",
+      "source_relative_path": "integration_generated_from_approved_phase5_phase6_alias_and_phenotype_sources",
+      "runtime_relative_path": "research_artifacts/runtime_v1/observation_vocabulary_v1.json",
+      "version": "1.2.0",
+      "sha256": "856326CB31E5655DA005F0943DD4A5FF278CEF438E0B303074D5B7AA7FFB362A",
+      "role": "provenance_backed_guided_observation_vocabulary",
+      "source_artifacts_used": [
+        "research_artifacts/runtime_v1/evidence_aware_rules_v1.json",
+        "research_artifacts/runtime_v1/compiled_diagnostic_rules_v1.json",
+        "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json",
+        "neuro_symbolic/reasoning_engine.py:SYNONYM_MAP",
+        "knowledge_graph/phenotype_graph.json"
+      ],
+      "generation_method": "Conservative extraction of explicit Phase 5 condition values, Phase 6 field definitions, implemented normalization aliases, and explicit phenotype graph values; canonical keys use lowercase snake_case.",
+      "invented_values_allowed": false,
+      "non_invention_statement": "No category, alias, evidence identifier, source identifier, citation, or numeric boundary was invented to complete the vocabulary."
+    },
+    {
+      "logical_name": "observation_vocabulary_schema",
+      "source_relative_path": "integration_generated_validation_contract_for_observation_vocabulary_v1",
+      "runtime_relative_path": "research_artifacts/runtime_v1/observation_vocabulary_schema_v1.json",
+      "version": "1.2.0",
+      "sha256": "5115D969E94EE196CFF0FD3C9C1E65EA7C20AE5C16047B383B8A9201EE1ED4E7",
+      "role": "observation_vocabulary_json_schema",
+      "source_artifacts_used": [
+        "research_artifacts/runtime_v1/neuro_symbolic_input_schema_v1.json",
+        "research_artifacts/runtime_v1/observation_vocabulary_v1.json"
+      ],
+      "generation_method": "Draft 2020-12 JSON Schema for structural, provenance, and non-invention constraints.",
+      "invented_values_allowed": false,
+      "non_invention_statement": "The schema validates vocabulary metadata and does not add observation categories."
+    }
+  ]
+}

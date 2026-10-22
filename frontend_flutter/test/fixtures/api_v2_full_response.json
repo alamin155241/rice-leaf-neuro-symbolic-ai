@@ -1,0 +1,145 @@
+{
+  "api_version": "2.0.0",
+  "runtime_mode": "research",
+  "artifact_versions": {
+    "observation_vocabulary": {
+      "version": "1.0.0",
+      "sha256": "ABC123",
+      "role": "provenance_backed_guided_observation_vocabulary"
+    }
+  },
+  "class": "brown_spot",
+  "confidence": 0.72,
+  "final_decision": "leaf_blast",
+  "trust_level": "medium",
+  "severity": "moderate",
+  "cnn_result": {
+    "prediction": "brown_spot",
+    "display_name": "Brown Spot",
+    "confidence": 0.72,
+    "second_prediction": "leaf_blast",
+    "second_confidence": 0.2,
+    "probabilities": {
+      "brown_spot": 0.72,
+      "healthy": 0.02,
+      "leaf_blast": 0.2,
+      "leaf_scald": 0.03,
+      "narrow_brown_spot": 0.03
+    },
+    "reliability": 0.72
+  },
+  "observation_result": {
+    "input_mode": "guided_phenotype",
+    "provided_observations": {"lesion_shape": "oval"},
+    "normalized_observations": {"lesion_shape": "oval"},
+    "observation_validation": [
+      {
+        "field": "lesion_shape",
+        "submitted_value": "oval",
+        "normalized_value": "oval",
+        "source": "user_confirmed",
+        "enum_validated": true,
+        "validation_type": "provenance_backed_categorical_enum"
+      }
+    ],
+    "unvalidated_fields": [],
+    "warnings": []
+  },
+  "visual_evidence": {
+    "attention_coverage_percent": 8.4,
+    "segmentation_validated": false,
+    "disclaimer": "Grad-CAM attention is a model-attention heuristic and is not validated lesion segmentation.",
+    "gradcam_heatmap_base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+    "gradcam_overlay_base64": null,
+    "attention_threshold_map_base64": null
+  },
+  "safety_result": {
+    "low_confidence": false,
+    "ambiguity_detected": false,
+    "contradiction_detected": false,
+    "requires_manual_review": false,
+    "warnings": []
+  },
+  "symbolic_result": {
+    "status": "completed",
+    "prediction": "leaf_blast",
+    "research_prediction": "Leaf Blast",
+    "score": 0.8,
+    "reliability": 0.7,
+    "confidence_category": "HIGH",
+    "matched_rule_ids": ["EA_RULE_TEST"],
+    "matched_evidence_ids": ["EVIDENCE_TEST"],
+    "matched_rules": [
+      {
+        "rule_id": "EA_RULE_TEST",
+        "class_name": "Leaf Blast",
+        "runtime_state": "ACTIVE_CANDIDATE",
+        "condition_text": "lesion is oval",
+        "conclusion_text": "Evidence supports diagnosis",
+        "citation": "Fixture citation",
+        "evidence_ids": ["EVIDENCE_TEST"]
+      }
+    ],
+    "reasoning_trace": [
+      {
+        "rule_id": "EA_RULE_TEST",
+        "condition_text": "lesion is oval",
+        "fired": true
+      }
+    ],
+    "limitations": ["Fixture limitation"],
+    "warnings": []
+  },
+  "fusion_result": {
+    "final_prediction": "leaf_blast",
+    "display_name": "Leaf Blast",
+    "candidate_prediction": "leaf_blast",
+    "candidate_display_name": "Leaf Blast",
+    "final_confidence": 0.81,
+    "cnn_weight": 0.45,
+    "symbolic_weight": 0.55,
+    "raw_phase7_cnn_weight": 0.45,
+    "raw_phase7_symbolic_weight": 0.55,
+    "abstention_policy_applied": false,
+    "agreement_status": "cnn_symbolic_disagreement",
+    "conflict_status": "detected",
+    "decision_status": "COMPLETED",
+    "requires_manual_review": false,
+    "resolution": "Evidence-aware fusion selected Leaf Blast."
+  },
+  "management_result": {
+    "recommendation": "Retake the image or consult a local expert.",
+    "warning": "No validated treatment rule is available.",
+    "actionable": false,
+    "advisory_only": true,
+    "validation_status": "NEEDS_LOCAL_VALIDATION",
+    "runtime_state": "STAGING_CANDIDATE",
+    "sources": [
+      {
+        "rule_id": "M_RULE_TEST",
+        "source_document_id": "SOURCE_TEST",
+        "citation": "Fixture citation"
+      }
+    ]
+  },
+  "explanation": {
+    "summary": "Final diagnosis: Leaf Blast (0.8100).",
+    "provided_observed_features": [],
+    "matched_observed_features": ["lesion shape oval"],
+    "matched_rule_ids": ["EA_RULE_TEST"],
+    "evidence_ids": ["EVIDENCE_TEST"],
+    "citations": ["Fixture citation"],
+    "source_records": [
+      {
+        "rule_id": "EA_RULE_TEST",
+        "source_document_id": "SOURCE_TEST",
+        "runtime_state": "ACTIVE_CANDIDATE"
+      }
+    ],
+    "why_cnn_contributed": "CNN reliability contributed to fusion.",
+    "why_symbolic_contributed": "One symbolic rule matched.",
+    "why_final_prediction_was_selected": "Evidence-aware fusion selected Leaf Blast.",
+    "reasoning_trace": [],
+    "limitations": ["Fixture limitation"]
+  }
+}

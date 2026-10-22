@@ -1,0 +1,48 @@
+{
+  "api_version": "2.0.0",
+  "runtime_mode": "research",
+  "class": "leaf_blast",
+  "confidence": 0.9,
+  "severity": "moderate",
+  "cnn_result": {"prediction": "leaf_blast", "confidence": 0.9},
+  "observation_result": {
+    "input_mode": "guided_phenotype",
+    "provided_observations": {"lesion_center_color": "greyish"},
+    "normalized_observations": {"lesion_center_color": "gray"},
+    "observation_validation": [
+      {
+        "field": "lesion_center_color",
+        "submitted_value": "greyish",
+        "normalized_value": "gray",
+        "source": "user_confirmed",
+        "enum_validated": true,
+        "validation_type": "provenance_backed_categorical_enum"
+      }
+    ]
+  },
+  "symbolic_result": {
+    "status": "completed",
+    "prediction": "leaf_blast",
+    "matched_rule_ids": ["EA_RULE_CENTER"],
+    "matched_rules": []
+  },
+  "fusion_result": {
+    "final_prediction": "leaf_blast",
+    "display_name": "Leaf Blast",
+    "final_confidence": 0.92,
+    "cnn_weight": 0.6,
+    "symbolic_weight": 0.4,
+    "requires_manual_review": false
+  },
+  "management_result": {"actionable": false, "advisory_only": true},
+  "visual_evidence": {"segmentation_validated": false},
+  "safety_result": {"requires_manual_review": false},
+  "explanation": {
+    "provided_observed_features": [],
+    "matched_observed_features": ["lesion center color gray"],
+    "matched_rule_ids": ["EA_RULE_CENTER"],
+    "evidence_ids": [],
+    "citations": [],
+    "limitations": []
+  }
+}

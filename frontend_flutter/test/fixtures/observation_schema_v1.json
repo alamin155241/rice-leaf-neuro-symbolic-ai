@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "fields": {
+    "lesion_present": {
+      "input_types": ["boolean"],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "boolean_allowed_values": [true, false],
+      "enum_validated": true,
+      "numeric_constraints": null,
+      "limitations": []
+    },
+    "lesion_shape": {
+      "input_types": ["string"],
+      "categorical_values_available": true,
+      "allowed_values": [
+        {
+          "canonical_value": "spindle_shaped",
+          "display_name": "Spindle-shaped",
+          "aliases": [
+            {"value": "spindle-shaped", "source": "explicit_normalization_alias"}
+          ],
+          "provenance": {
+            "source_rule_ids": [],
+            "evidence_ids": [],
+            "record_ids": [],
+            "source_ids": ["fixture_source"],
+            "citations": []
+          }
+        },
+        {
+          "canonical_value": "oval",
+          "display_name": "Oval",
+          "aliases": [],
+          "provenance": {
+            "source_rule_ids": ["EA_RULE_TEST"],
+            "evidence_ids": [],
+            "record_ids": ["RECORD_TEST"],
+            "source_ids": ["fixture_source"],
+            "citations": ["Fixture citation"]
+          }
+        }
+      ],
+      "boolean_allowed_values": null,
+      "enum_validated": true,
+      "numeric_constraints": null,
+      "limitations": []
+    },
+    "lesion_width_mm": {
+      "input_types": ["number"],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "boolean_allowed_values": null,
+      "enum_validated": false,
+      "numeric_constraints": null,
+      "limitations": ["No source-backed range."]
+    },
+    "dryness": {
+      "input_types": ["string", "boolean"],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "boolean_allowed_values": [true, false],
+      "enum_validated": true,
+      "numeric_constraints": null,
+      "limitations": ["String text is unvalidated."]
+    },
+    "other_observations": {
+      "input_types": ["array"],
+      "categorical_values_available": false,
+      "allowed_values": null,
+      "boolean_allowed_values": null,
+      "enum_validated": false,
+      "numeric_constraints": null,
+      "limitations": ["Free text is unvalidated."]
+    }
+  },
+  "limitations": ["Fixture schema for Flutter tests."]
+}

@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "scope_note": "Draft phenotype knowledge for decision support. Facts require local expert review and must not be treated as a final diagnosis.",
+  "diseases": {
+    "brown_spot": {
+      "display_name": "Brown Spot",
+      "symptoms": [
+        "Brown lesions may appear on the leaf blade.",
+        "Established lesions may develop a lighter grey or tan centre.",
+        "Numerous lesions can be associated with premature leaf drying."
+      ],
+      "lesion_patterns": [
+        "Small oval or nearly circular spots",
+        "Brown margin with a paler centre",
+        "Lesions may remain separate or merge under strong symptom pressure"
+      ],
+      "affected_plant_parts": [
+        "leaf blade",
+        "leaf sheath",
+        "grain in some disease situations"
+      ],
+      "favourable_conditions": [
+        "prolonged leaf wetness",
+        "high relative humidity",
+        "nutrient-stressed plants",
+        "poorly managed or low-fertility soils"
+      ],
+      "possible_confusion_classes": [
+        "leaf_blast",
+        "narrow_brown_spot"
+      ],
+      "prevention_facts": [
+        "Use healthy seed and locally suitable varieties.",
+        "Maintain balanced crop nutrition and field drainage.",
+        "Monitor fields where leaf wetness remains high."
+      ],
+      "management_facts": [
+        "Inspect several leaves before deciding that the symptom is widespread.",
+        "Improve field sanitation and balanced fertilization.",
+        "Consult local extension guidance before using crop-protection products."
+      ],
+      "evidence_source_ids": [
+        "draft_phenotype_brown_spot_001"
+      ]
+    },
+    "healthy": {
+      "display_name": "Healthy",
+      "symptoms": [
+        "No clear disease-associated lesion pattern is visible.",
+        "Leaf colour and texture appear broadly consistent with a healthy rice leaf."
+      ],
+      "lesion_patterns": [
+        "No distinct lesion pattern expected"
+      ],
+      "affected_plant_parts": [],
+      "favourable_conditions": [
+        "balanced nutrition",
+        "appropriate water management",
+        "regular field monitoring"
+      ],
+      "possible_confusion_classes": [
+        "brown_spot",
+        "leaf_blast",
+        "leaf_scald",
+        "narrow_brown_spot"
+      ],
+      "prevention_facts": [
+        "Continue routine crop monitoring.",
+        "Maintain balanced nutrition and appropriate water management."
+      ],
+      "management_facts": [
+        "Inspect again if symptoms become visible.",
+        "Check additional leaves when the photographed leaf is not representative."
+      ],
+      "evidence_source_ids": [
+        "draft_phenotype_healthy_001"
+      ]
+    },
+    "leaf_blast": {
+      "display_name": "Leaf Blast",
+      "symptoms": [
+        "Lesions may begin as small water-soaked or grey-green spots.",
+        "Developed lesions can have a pale centre and darker brown margin.",
+        "Strong symptom pressure may cause affected leaf tissue to dry."
+      ],
+      "lesion_patterns": [
+        "Spindle-shaped or diamond-shaped lesions",
+        "Grey or whitish centre with a brown border",
+        "Lesions may lengthen along the leaf blade"
+      ],
+      "affected_plant_parts": [
+        "leaf blade",
+        "leaf collar",
+        "node and panicle neck in other blast phases"
+      ],
+      "favourable_conditions": [
+        "high humidity",
+        "frequent rainfall or prolonged leaf wetness",
+        "dense crop canopy",
+        "excessive nitrogen availability"
+      ],
+      "possible_confusion_classes": [
+        "brown_spot",
+        "leaf_scald"
+      ],
+      "prevention_facts": [
+        "Use locally recommended resistant varieties where available.",
+        "Avoid excessive nitrogen and maintain appropriate plant spacing.",
+        "Monitor fields during prolonged humid weather."
+      ],
+      "management_facts": [
+        "Inspect nearby plants for similar lesions.",
+        "Use local extension guidance for integrated disease management.",
+        "Use only locally registered crop-protection products according to label instructions."
+      ],
+      "evidence_source_ids": [
+        "draft_phenotype_leaf_blast_001"
+      ]
+    },
+    "leaf_scald": {
+      "display_name": "Leaf Scald",
+      "symptoms": [
+        "Affected tissue may show alternating light and dark zones.",
+        "Leaf tips or margins may develop drying that progresses inward.",
+        "Large affected regions can take on a scalded appearance."
+      ],
+      "lesion_patterns": [
+        "Zonate or banded lesion appearance",
+        "Lesions often develop from the leaf tip or margin",
+        "Irregular oblong areas may merge as symptoms progress"
+      ],
+      "affected_plant_parts": [
+        "leaf blade",
+        "leaf tip",
+        "leaf margin"
+      ],
+      "favourable_conditions": [
+        "warm and humid weather",
+        "prolonged leaf wetness",
+        "dense canopy",
+        "infected crop residue"
+      ],
+      "possible_confusion_classes": [
+        "leaf_blast",
+        "narrow_brown_spot"
+      ],
+      "prevention_facts": [
+        "Maintain field hygiene and manage crop residue.",
+        "Support airflow through appropriate spacing.",
+        "Avoid unnecessary prolonged leaf wetness where water management permits."
+      ],
+      "management_facts": [
+        "Inspect symptom development from the leaf tip and margin.",
+        "Check several plants before deciding on management.",
+        "Consult local agricultural extension guidance."
+      ],
+      "evidence_source_ids": [
+        "draft_phenotype_leaf_scald_001"
+      ]
+    },
+    "narrow_brown_spot": {
+      "display_name": "Narrow Brown Spot",
+      "symptoms": [
+        "Short narrow brown lesions may occur parallel to leaf veins.",
+        "Lesions may become more numerous as affected leaves age.",
+        "Strong symptom pressure may be associated with leaf discolouration."
+      ],
+      "lesion_patterns": [
+        "Narrow linear brown lesions",
+        "Lesions commonly follow the direction of leaf veins",
+        "Spots are usually narrower than typical brown-spot lesions"
+      ],
+      "affected_plant_parts": [
+        "leaf blade",
+        "leaf sheath"
+      ],
+      "favourable_conditions": [
+        "high humidity",
+        "prolonged leaf wetness",
+        "nutrient imbalance",
+        "stressed or ageing leaves"
+      ],
+      "possible_confusion_classes": [
+        "brown_spot",
+        "leaf_scald"
+      ],
+      "prevention_facts": [
+        "Maintain balanced fertilization, including adequate potassium where locally indicated.",
+        "Use healthy seed and routine field sanitation.",
+        "Monitor stressed fields during humid conditions."
+      ],
+      "management_facts": [
+        "Compare lesion width and direction across several leaves.",
+        "Improve crop nutrition based on local soil and extension guidance.",
+        "Use only locally registered crop-protection products according to label instructions."
+      ],
+      "evidence_source_ids": [
+        "draft_phenotype_narrow_brown_spot_001"
+      ]
+    }
+  }
+}

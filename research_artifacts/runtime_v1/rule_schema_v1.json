@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence-Aware Rule",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "class_name",
+    "rule_type",
+    "conditions",
+    "condition_text",
+    "conclusion",
+    "priority",
+    "provisional_weight",
+    "runtime_state",
+    "provenance"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "class_name": {
+      "type": "string"
+    },
+    "rule_type": {
+      "enum": [
+        "diagnostic",
+        "environmental_support",
+        "severity",
+        "healthy_baseline",
+        "management",
+        "supporting_knowledge"
+      ]
+    },
+    "condition_text": {
+      "type": "string"
+    },
+    "provisional_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "runtime_enabled": {
+      "type": "boolean"
+    }
+  }
+}

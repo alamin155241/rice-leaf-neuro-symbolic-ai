@@ -1,0 +1,10 @@
+# Verified working runtime: CPython 3.13.2
+tensorflow==2.21.0
+fastapi==0.136.0
+uvicorn==0.44.0
+pydantic==2.13.2
+numpy==2.4.4
+pillow==12.2.0
+jsonschema==4.26.0
+pytest==9.1.1
+python-multipart==0.0.26

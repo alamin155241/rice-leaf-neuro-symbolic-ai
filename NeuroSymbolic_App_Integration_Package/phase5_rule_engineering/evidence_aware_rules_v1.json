@@ -1,0 +1,2831 @@
+{
+  "metadata": {
+    "name": "Evidence-Aware Rice Disease Rule Base",
+    "version": "1.0.0",
+    "generated_at_utc": "2026-07-30T06:10:51.418468+00:00",
+    "source_master_file": "/content/drive/My Drive/capstone/Final_capstone/phase5_rule_engineering/Master_Implementation_Dataset (1).xlsx",
+    "total_rule_relevant_records": 245,
+    "total_unique_rules": 61,
+    "runtime_active_candidates": 1,
+    "note": "All rule content is derived from the existing Master Implementation Dataset. No new scientific claim was invented by this notebook."
+  },
+  "rules": [
+    {
+      "rule_id": "EA_RULE_5BC6C353BA",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [],
+      "condition_text": "",
+      "conclusion": {
+        "raw_text": "",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "HOLD_PARSE_INCOMPLETE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Agronomist review is required before using non-leaf manifestations in Leaf Blast reasoning.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0024",
+        "implementation_record_id": "RBL_IMPL_024",
+        "source_record_id": "RBL_SYM_012",
+        "source_dataset": "02_Symptoms",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "25",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=late; Symptom=drying up of the leaf sheath; Progression Stage=late; From=kill the leaf; Plant Part=leaf sheath",
+        "normalized_implementation_value": "symptom=drying up of the leaf sheath | stage=late | plant_part=leaf sheath"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_610FE9355D",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Rice leaf is infected by the blast fungus",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Rice leaf is infected by the blast fungus",
+      "conclusion": {
+        "raw_text": "Leaf blast is seen as elliptical spots resembling a spindle shape",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0229",
+        "implementation_record_id": "RBL_IMPL_229",
+        "source_record_id": "RBL_RULE_001",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "230",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Lesion Identification; IF=Rice leaf is infected by the blast fungus; THEN=Leaf blast is seen as elliptical spots resembling a spindle shape; Entities=Rice leaf; blast lesion shape; Values=Spindle shape; elliptical spots; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Rice leaf is infected by the blast fungus THEN Leaf blast is seen as elliptical spots resembling a spindle shape"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_9EDFE97BF1",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Leaf blast spot is present",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Leaf blast spot is present",
+      "conclusion": {
+        "raw_text": "Center of spot is grayish or whitish and margin is brown or reddish-brown",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0230",
+        "implementation_record_id": "RBL_IMPL_230",
+        "source_record_id": "RBL_RULE_002",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "231",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Lesion Identification; IF=Leaf blast spot is present; THEN=Center of spot is grayish or whitish and margin is brown or reddish-brown; Entities=Lesion center color; lesion margin color; Values=Grayish or whitish; brown or reddish-brown; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Leaf blast spot is present THEN Center of spot is grayish or whitish and margin is brown or reddish-brown"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_CE788DB802",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Acute lesions with grayish or whitish centers are observed on leaves",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Acute lesions with grayish or whitish centers are observed on leaves",
+      "conclusion": {
+        "raw_text": "Rice variety is susceptible to the disease",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0231",
+        "implementation_record_id": "RBL_IMPL_231",
+        "source_record_id": "RBL_RULE_003",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "232",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Susceptibility; IF=Acute lesions with grayish or whitish centers are observed on leaves; THEN=Rice variety is susceptible to the disease; Entities=Lesion type; rice variety susceptibility; Values=Acute lesions; Susceptible; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Acute lesions with grayish or whitish centers are observed on leaves THEN Rice variety is susceptible to the disease"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_48583020E1",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Blast lesions on leaves are minute brown specks of pin-head size",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Blast lesions on leaves are minute brown specks of pin-head size",
+      "conclusion": {
+        "raw_text": "Rice variety is resistant",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Resolve the unmatched citation and validate the lesion-resistance association.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0232",
+        "implementation_record_id": "RBL_IMPL_232",
+        "source_record_id": "RBL_RULE_004",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "233",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Resistance; IF=Blast lesions on leaves are minute brown specks of pin-head size; THEN=Rice variety is resistant; Entities=Lesion size; rice variety resistance; Values=Minute brown specks; Resistant; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Blast lesions on leaves are minute brown specks of pin-head size THEN Rice variety is resistant"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_8298EF820D",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Rice plant is infected at the seedling",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "early tillering stages",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Rice plant is infected at the seedling and early tillering stages",
+      "conclusion": {
+        "raw_text": "Plant may be killed completely",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0233",
+        "implementation_record_id": "RBL_IMPL_233",
+        "source_record_id": "RBL_RULE_005",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "234",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Disease Progression; IF=Rice plant is infected at the seedling and early tillering stages; THEN=Plant may be killed completely; Entities=Rice plant; growth stage; Values=Seedling; early tillering; killed completely; Derivation=DIRECT_CONDITIONAL_STATEMENT; Scope=GENERAL_RICE_BLAST; Limitation=NEEDS_EXPERT_VALIDATION",
+        "normalized_implementation_value": "IF Rice plant is infected at the seedling and early tillering stages THEN Plant may be killed completely"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_BC5C775AAB",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Fungus is in a temperate environment",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "temperature is 24°C",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Fungus is in a temperate environment and temperature is 24°C",
+      "conclusion": {
+        "raw_text": "Fungus requires 6 hr to penetrate the host cells",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0234",
+        "implementation_record_id": "RBL_IMPL_234",
+        "source_record_id": "RBL_RULE_006",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "235",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=Fungus is in a temperate environment and temperature is 24°C; THEN=Fungus requires 6 hr to penetrate the host cells; Entities=Environment type; temperature; penetration time; Values=Temperate; 24°C; 6 hr; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=GENERAL_RICE_BLAST; Limitation=Temperate environments; NEEDS_EXPERT_VALIDATION",
+        "normalized_implementation_value": "IF Fungus is in a temperate environment and temperature is 24°C THEN Fungus requires 6 hr to penetrate the host cells"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_425CD9BA70",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Fungus is in a tropical environment",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Fungus is in a tropical environment",
+      "conclusion": {
+        "raw_text": "Minimum 8-hr dew period is required to complete the infection event",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0235",
+        "implementation_record_id": "RBL_IMPL_235",
+        "source_record_id": "RBL_RULE_007",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "236",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=Fungus is in a tropical environment; THEN=Minimum 8-hr dew period is required to complete the infection event; Entities=Environment type; dew period; Values=Tropical; minimum 8 hr; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=GENERAL_RICE_BLAST; Limitation=Tropical environments; NEEDS_EXPERT_VALIDATION",
+        "normalized_implementation_value": "IF Fungus is in a tropical environment THEN Minimum 8-hr dew period is required to complete the infection event"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_25CA5BD152",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Infection conditions involve darkness",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Infection conditions involve darkness",
+      "conclusion": {
+        "raw_text": "Infection occurs most easily",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0236",
+        "implementation_record_id": "RBL_IMPL_236",
+        "source_record_id": "RBL_RULE_008",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "237",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=Infection conditions involve darkness; THEN=Infection occurs most easily; Entities=Lighting conditions; Values=Darkness; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=GENERAL_RICE_BLAST; Limitation=NEEDS_EXPERT_VALIDATION",
+        "normalized_implementation_value": "IF Infection conditions involve darkness THEN Infection occurs most easily"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_CF5DBC5023",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Relative humidity is below 93%",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Relative humidity is below 93%",
+      "conclusion": {
+        "raw_text": "No conidia are produced (no sporulation occurs)",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0237",
+        "implementation_record_id": "RBL_IMPL_237",
+        "source_record_id": "RBL_RULE_009",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "238",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=Relative humidity is below 93%; THEN=No conidia are produced (no sporulation occurs); Entities=Relative humidity; sporulation; Values=< 93%; no conidia produced; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=GENERAL_RICE_BLAST; Limitation=NEEDS_EXPERT_VALIDATION",
+        "normalized_implementation_value": "IF Relative humidity is below 93% THEN No conidia are produced (no sporulation occurs)"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_F882EFA064",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Farmers apply silica",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "balance nitrogen fertilizer, phosphorus,",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "potassium",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Farmers apply silica and balance nitrogen fertilizer, phosphorus, and potassium",
+      "conclusion": {
+        "raw_text": "Incidence and severity of blast may be effectively reduced",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm that the general Rice Blast rule applies to Leaf Blast before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0238",
+        "implementation_record_id": "RBL_IMPL_238",
+        "source_record_id": "RBL_RULE_010",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "239",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Management; IF=Farmers apply silica and balance nitrogen fertilizer, phosphorus, and potassium; THEN=Incidence and severity of blast may be effectively reduced; Entities=Silica; NPK fertilizer; Values=Balanced application; reduce incidence/severity; Derivation=DIRECT_RECOMMENDATION_TRANSFORMATION; Scope=GENERAL_RICE_BLAST; Limitation=Intensive rice production; needs expert validation",
+        "normalized_implementation_value": "IF Farmers apply silica and balance nitrogen fertilizer, phosphorus, and potassium THEN Incidence and severity of blast may be effectively reduced"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_AA779E5CF1",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Rice plants become mature",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Rice plants become mature",
+      "conclusion": {
+        "raw_text": "Level of resistance to leaf blast gradually increases",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0239",
+        "implementation_record_id": "RBL_IMPL_239",
+        "source_record_id": "RBL_RULE_011",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "240",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Resistance; IF=Rice plants become mature; THEN=Level of resistance to leaf blast gradually increases; Entities=Rice growth stage; leaf blast resistance; Values=Mature; gradually increases; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Rice plants become mature THEN Level of resistance to leaf blast gradually increases"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_E35578FC2B",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Silica application increases frequency of silicified cells in leaf epidermis",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Silica application increases frequency of silicified cells in leaf epidermis",
+      "conclusion": {
+        "raw_text": "Penetration resistance against M. oryzae is conferred",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0240",
+        "implementation_record_id": "RBL_IMPL_240",
+        "source_record_id": "RBL_RULE_012",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "241",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Resistance; IF=Silica application increases frequency of silicified cells in leaf epidermis; THEN=Penetration resistance against M. oryzae is conferred; Entities=Leaf epidermis; silicified cells; M. oryzae; Values=Increased frequency; resistance conferred; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Silica application increases frequency of silicified cells in leaf epidermis THEN Penetration resistance against M. oryzae is conferred"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_F72D4B656C",
+      "class_id": "CLASS_LEAF_BLAST",
+      "class_name": "Leaf Blast",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Leaf lesions are acute",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Leaf lesions are acute",
+      "conclusion": {
+        "raw_text": "Conidia are more or less round and small",
+        "target_class": "Leaf Blast",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Confirm microscopy/measurement requirements; this is not directly observable from a standard leaf image.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0241",
+        "implementation_record_id": "RBL_IMPL_241",
+        "source_record_id": "RBL_RULE_013",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "RiceBlast_15_Implementation_Ready (1).xlsx",
+        "source_row_number": "242",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Diagnostic; IF=Leaf lesions are acute; THEN=Conidia are more or less round and small; Entities=Leaf lesion type; conidia morphology; Values=Acute; round and small; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Scope=LEAF_BLAST_SPECIFIC",
+        "normalized_implementation_value": "IF Leaf lesions are acute THEN Conidia are more or less round and small"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_A57643115A",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [],
+      "condition_text": "",
+      "conclusion": {
+        "raw_text": "",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "HOLD_PARSE_INCOMPLETE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0311",
+        "implementation_record_id": "NBLS_IMPL_070",
+        "source_record_id": "NBLS_STAGE_001",
+        "source_dataset": "05_Growth_Stages",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "71",
+        "evidence_ids": [],
+        "original_extracted_value": "Source Stage Phrase=premature leaves; Normalized Stage=Premature; Stage Category=LEAF_AGE_CONTEXT; Leaf Age Context=premature leaves; Disease Association=Killed premature leaves; Natural or Experimental=NATURAL_FIELD_CONTEXT",
+        "normalized_implementation_value": "Premature [LEAF_AGE_CONTEXT]"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_470127202D",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "causal fungus is Cercospora janseana",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "causal fungus is Cercospora janseana",
+      "conclusion": {
+        "raw_text": "Narrow Brown Leaf Spot",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0421",
+        "implementation_record_id": "NBLS_IMPL_180",
+        "source_record_id": "NBLS_RULE_001",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "181",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=DIAGNOSTIC_RULE; Rule Name=Pathogen Confirmation; IF Condition=causal fungus is Cercospora janseana; THEN Conclusion=Narrow Brown Leaf Spot; Rule Output=Identify disease as NBLS; Priority=High; Rule Explanation=Establishes the primary link between the causal agent and the disease identity.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF causal fungus is Cercospora janseana THEN Narrow Brown Leaf Spot"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_D35B922621",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Narrow Brown Leaf Spot is present",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Narrow Brown Leaf Spot is present",
+      "conclusion": {
+        "raw_text": "affects leaf blades",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0422",
+        "implementation_record_id": "NBLS_IMPL_181",
+        "source_record_id": "NBLS_RULE_002",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "182",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=PLANT_PART_RULE; Rule Name=Main Target Tissue; IF Condition=Narrow Brown Leaf Spot is present; THEN Conclusion=affects leaf blades; Rule Output=Flag leaf as potential symptomatic site; Priority=High; Rule Explanation=Identifies the primary anatomical structure where symptoms are most common.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF Narrow Brown Leaf Spot is present THEN affects leaf blades"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_83353103A2",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "narrow brown lesions are observed",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "width is approximately 1 mm",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "narrow brown lesions are observed AND width is approximately 1 mm",
+      "conclusion": {
+        "raw_text": "support NBLS diagnosis",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0423",
+        "implementation_record_id": "NBLS_IMPL_182",
+        "source_record_id": "NBLS_RULE_003",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "183",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=LESION_RULE; Rule Name=Lesion Width Diagnostic; IF Condition=narrow brown lesions are observed; AND Condition=width is approximately 1 mm; THEN Conclusion=support NBLS diagnosis; Rule Output=Confirm NBLS identity by lesion width; Priority=Medium; Rule Explanation=Quantitative measure for differential diagnosis against broader lesions.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF narrow brown lesions are observed AND width is approximately 1 mm THEN support NBLS diagnosis"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_FD5D5A6A66",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "grasses are found on field bunds",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "grasses are found on field bunds",
+      "conclusion": {
+        "raw_text": "potential source of primary inoculum",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "LOW",
+      "provisional_weight": 0.5,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0424",
+        "implementation_record_id": "NBLS_IMPL_183",
+        "source_record_id": "NBLS_RULE_004",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "184",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=INOCULUM_RULE; Rule Name=Bund Grass Potential; IF Condition=grasses are found on field bunds; THEN Conclusion=potential source of primary inoculum; Rule Output=Inspect bunds for inoculum; Priority=Low; Rule Explanation=Source explicitly states that the role of bund grasses needs to be verified.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF grasses are found on field bunds THEN potential source of primary inoculum"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_982C43680A",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "crop is main crop rice",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "stage is boot-to-heading",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "crop is main crop rice AND stage is boot-to-heading",
+      "conclusion": {
+        "raw_text": "apply recommended fungicide",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "NEEDS_LOCAL_VALIDATION",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0425",
+        "implementation_record_id": "NBLS_IMPL_184",
+        "source_record_id": "NBLS_RULE_005",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "APS2026_NBLS",
+        "citation": "American Phytopathological Society. 2026. Narrow Brown Leaf Spot of Rice. Plant Health Instructor / APS Education Center.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "185",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=MANAGEMENT_RULE; Rule Name=Fungicide Timing; IF Condition=crop is main crop rice; AND Condition=stage is boot-to-heading; THEN Conclusion=apply recommended fungicide; Rule Output=Manage disease in reproductive stage; Priority=Medium; Rule Explanation=Application timing depends on local registration and label requirements.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF crop is main crop rice AND stage is boot-to-heading THEN apply recommended fungicide"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_FD2BA45FBC",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "disease is in initial stages",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "lesions are elongated",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "light brown",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "disease is in initial stages AND lesions are elongated and light brown",
+      "conclusion": {
+        "raw_text": "mistakable for White Leaf Streak",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0426",
+        "implementation_record_id": "NBLS_IMPL_185",
+        "source_record_id": "NBLS_RULE_006",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "186",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=CONFUSION_RULE; Rule Name=Initial Stage WLS Confusion; IF Condition=disease is in initial stages; AND Condition=lesions are elongated and light brown; THEN Conclusion=mistakable for White Leaf Streak; Rule Output=Differential diagnosis required; Priority=High; Rule Explanation=Alerts the observer that early NBLS lesions share features with WLS.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF disease is in initial stages AND lesions are elongated and light brown THEN mistakable for White Leaf Streak"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_41B7C33926",
+      "class_id": "CLASS_NARROW_BROWN_LEAF_SPOT",
+      "class_name": "Narrow Brown Leaf Spot",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "causal organism is Cercospora janseana",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "causal organism is Cercospora janseana",
+      "conclusion": {
+        "raw_text": "has physiologic races",
+        "target_class": "Narrow Brown Leaf Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "REVIEW_REQUIRED",
+        "requirement": "Source-supported; retain provenance during implementation.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0427",
+        "implementation_record_id": "NBLS_IMPL_186",
+        "source_record_id": "NBLS_RULE_007",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "NarrowBrownLeafSpot_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "187",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Category=RESISTANCE_RULE; Rule Name=Pathogen Physiologic Races; IF Condition=causal organism is Cercospora janseana; THEN Conclusion=has physiologic races; Rule Output=Consider race specificity in resistance; Priority=Medium; Rule Explanation=Confirms that varietal response depends on the specific race group present.; Source Dataset=Dataset 11",
+        "normalized_implementation_value": "IF causal organism is Cercospora janseana THEN has physiologic races"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_FE81BFC9F8",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [],
+      "condition_text": "",
+      "conclusion": {
+        "raw_text": "",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "HOLD_PARSE_INCOMPLETE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "Normalize labels and identifiers before import.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0499",
+        "implementation_record_id": "LSC_IMPL_072",
+        "source_record_id": "LSC_STAGE_001",
+        "source_dataset": "05_Growth_Stages",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "73",
+        "evidence_ids": [],
+        "original_extracted_value": "Stage Mention=mature; Normalized Growth Stage=mature leaves; Stage Category=LEAF_AGE; Stage Context=natural symptom occurrence; Leaf Age or Position=mature; Natural or Experimental=NATURAL_OCCURRENCE; Disease Association=usually occur on; Affected Plant Part=leaves",
+        "normalized_implementation_value": "mature leaves — LEAF_AGE (NATURAL_OCCURRENCE)"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_8C8A54B145",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion starts at leaf tip or edges",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "lesion is characterized by zonation",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "lesion occurs on mature leaves",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lesion starts at leaf tip or edges AND lesion is characterized by zonation AND lesion occurs on mature leaves",
+      "conclusion": {
+        "raw_text": "evidence supports diagnosis of Leaf Scald",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "Correct entity, predicate, temporal context, or compound-rule structure before import.",
+        "implementation_status": "NEEDS_NORMALIZATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0600",
+        "implementation_record_id": "LSC_IMPL_173",
+        "source_record_id": "LSC_RULE_001",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "174",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Primary Diagnosis; Rule Type=DIAGNOSTIC_RULE; IF Condition 1=lesion starts at leaf tip or edges; Logical Operator 1=AND; IF Condition 2=lesion is characterized by zonation; Logical Operator 2=AND; IF Condition 3=lesion occurs on mature leaves; THEN Conclusion=evidence supports diagnosis of Leaf Scald; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=HIGH; Rule Weight=0.9; Confidence Level=HIGH; Natural or Experimental=NATURAL_OCCURRENCE; Ontology Class=Symptom; Ontology Property=hasSymptom; KG Triple ID=LSC_KG_005; Ontology Mapping ID=LSC_ONT_MAP_001; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF lesion starts at leaf tip or edges AND lesion is characterized by zonation AND lesion occurs on mature leaves THEN evidence supports diagnosis of Leaf Scald"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_3192E3ED71",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "organism is Gerlachia oryza",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "organism is Gerlachia oryza",
+      "conclusion": {
+        "raw_text": "organism is the causal agent of Leaf Scald",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Obtain plant-pathology/domain-expert approval before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0601",
+        "implementation_record_id": "LSC_IMPL_174",
+        "source_record_id": "LSC_RULE_002",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hett...",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "175",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Pathogen ID; Rule Type=DIAGNOSTIC_RULE; IF Condition 1=organism is Gerlachia oryza; THEN Conclusion=organism is the causal agent of Leaf Scald; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=HIGH; Rule Weight=1.0; Confidence Level=HIGH; Ontology Class=Pathogen; Ontology Property=causedBy; KG Triple ID=LSC_KG_002; Ontology Mapping ID=LSC_ONT_MAP_002; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF organism is Gerlachia oryza THEN organism is the causal agent of Leaf Scald"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_CDDC7A936F",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion is more or less oblong",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "lesion has light brown halos",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lesion is more or less oblong AND lesion has light brown halos",
+      "conclusion": {
+        "raw_text": "lesion is characteristic of Leaf Scald",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "Correct entity, predicate, temporal context, or compound-rule structure before import.",
+        "implementation_status": "NEEDS_NORMALIZATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0602",
+        "implementation_record_id": "LSC_IMPL_175",
+        "source_record_id": "LSC_RULE_003",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "176",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Oblong Lesion Feature; Rule Type=LESION_RULE; IF Condition 1=lesion is more or less oblong; Logical Operator 1=AND; IF Condition 2=lesion has light brown halos; THEN Conclusion=lesion is characteristic of Leaf Scald; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=MODERATE; Rule Weight=0.7; Confidence Level=MODERATE; Natural or Experimental=NATURAL_OCCURRENCE; Ontology Class=Lesion; Ontology Property=hasLesionFeature; KG Triple ID=LSC_KG_006; Ontology Mapping ID=LSC_ONT_MAP_003; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF lesion is more or less oblong AND lesion has light brown halos THEN lesion is characteristic of Leaf Scald"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_E9ACF44515",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "leaf wetness is present",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "leaf wetness is present",
+      "conclusion": {
+        "raw_text": "Leaf Scald lesion development is influenced",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate against local Leaf Scald images, sensors, or field data before activation.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0603",
+        "implementation_record_id": "LSC_IMPL_176",
+        "source_record_id": "LSC_RULE_004",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "177",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Leaf Wetness Influence; Rule Type=ENVIRONMENT_RULE; IF Condition 1=leaf wetness is present; THEN Conclusion=Leaf Scald lesion development is influenced; Rule Direction=Subject_to_Object; Positive or Negative Evidence=CONDITIONAL; Feature Importance=MODERATE; Rule Weight=0.6; Confidence Level=MODERATE; Natural or Experimental=EXPERIMENTAL_CONTEXT; Ontology Class=EnvironmentalCondition; Ontology Property=influencedBy; KG Triple ID=LSC_KG_008; Ontology Mapping ID=LSC_ONT_MAP_004; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF leaf wetness is present THEN Leaf Scald lesion development is influenced"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_D6FD4D982A",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "clean seeds are used",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "field sanitation is performed",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "clean seeds are used AND field sanitation is performed",
+      "conclusion": {
+        "raw_text": "Leaf Scald disease can be minimized",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "Correct entity, predicate, temporal context, or compound-rule structure before import.",
+        "implementation_status": "NEEDS_NORMALIZATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0604",
+        "implementation_record_id": "LSC_IMPL_177",
+        "source_record_id": "LSC_RULE_005",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "178",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Primary Management; Rule Type=PREVENTION_RULE; IF Condition 1=clean seeds are used; Logical Operator 1=AND; IF Condition 2=field sanitation is performed; THEN Conclusion=Leaf Scald disease can be minimized; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=HIGH; Rule Weight=0.8; Confidence Level=HIGH; Natural or Experimental=NATURAL_FIELD_CONTEXT; Ontology Class=PreventionMeasure; Ontology Property=preventedBy; KG Triple ID=LSC_KG_010; Ontology Mapping ID=LSC_ONT_MAP_005; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RECOMMENDATION_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF clean seeds are used AND field sanitation is performed THEN Leaf Scald disease can be minimized"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_D3897BBA01",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion lacks distinct zonation",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "geographic context is Japan",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lesion lacks distinct zonation AND geographic context is Japan",
+      "conclusion": {
+        "raw_text": "symptom is identified as leaf tip blight (Leaf Scald)",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_ONTOLOGY_MAPPING",
+        "requirement": "Create and approve the missing ontology class/property mapping before import.",
+        "implementation_status": "NEEDS_ONTOLOGY_MAPPING",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0605",
+        "implementation_record_id": "LSC_IMPL_178",
+        "source_record_id": "LSC_RULE_006",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "179",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Regional Form (Japan); Rule Type=DIAGNOSTIC_RULE; IF Condition 1=lesion lacks distinct zonation; Logical Operator 1=AND; IF Condition 2=geographic context is Japan; THEN Conclusion=symptom is identified as leaf tip blight (Leaf Scald); Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=MODERATE; Rule Weight=0.6; Confidence Level=MODERATE; Natural or Experimental=NATURAL_OCCURRENCE; Ontology Class=Symptom; Ontology Property=hasAlternativeName; KG Triple ID=LSC_KG_011; Ontology Mapping ID=LSC_ONT_MAP_006; Evidence Strength=DIRECT; Conflict Risk=MODERATE; Validation Requirement=NEEDS_LOCAL_VALIDATION; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF lesion lacks distinct zonation AND geographic context is Japan THEN symptom is identified as leaf tip blight (Leaf Scald)"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_17B32BDE46",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "rice leaf has injury or necrotic tissues",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "rice leaf has injury or necrotic tissues",
+      "conclusion": {
+        "raw_text": "G. oryza capability to invade host tissue increases",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_ONTOLOGY_MAPPING",
+        "requirement": "Create and approve the missing ontology class/property mapping before import.",
+        "implementation_status": "NEEDS_ONTOLOGY_MAPPING",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0606",
+        "implementation_record_id": "LSC_IMPL_179",
+        "source_record_id": "LSC_RULE_007",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "180",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Injury Predisposition; Rule Type=DISEASE_CYCLE_RULE; IF Condition 1=rice leaf has injury or necrotic tissues; THEN Conclusion=G. oryza capability to invade host tissue increases; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=MODERATE; Rule Weight=0.7; Confidence Level=MODERATE; Ontology Class=HostTissue; Ontology Property=influencedBy; KG Triple ID=LSC_KG_011; Ontology Mapping ID=LSC_ONT_MAP_007; Evidence Strength=CONDITIONAL; Conflict Risk=LOW; Implementation Target=EXPLAINABLE_AI; Rule Status=READY",
+        "normalized_implementation_value": "IF rice leaf has injury or necrotic tissues THEN G. oryza capability to invade host tissue increases"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_E216B0E4EC",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "supporting_knowledge",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "leaf clipping method is used",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "leaf clipping method is used",
+      "conclusion": {
+        "raw_text": "technique is effective for evaluating Leaf Scald resistance",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "Normalize labels and identifiers before import.",
+        "implementation_status": "READY",
+        "data_quality_flags": "READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0607",
+        "implementation_record_id": "LSC_IMPL_180",
+        "source_record_id": "LSC_RULE_008",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hett...",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "181",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Effective Screening; Rule Type=RESISTANCE_RULE; IF Condition 1=leaf clipping method is used; THEN Conclusion=technique is effective for evaluating Leaf Scald resistance; Rule Direction=Subject_to_Object; Positive or Negative Evidence=POSITIVE; Feature Importance=MODERATE; Rule Weight=0.7; Confidence Level=MODERATE; Natural or Experimental=RESISTANCE_EVALUATION_CONTEXT; Ontology Class=ScreeningMethod; Ontology Property=evaluatedBy; KG Triple ID=LSC_KG_014; Ontology Mapping ID=LSC_ONT_MAP_008; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF leaf clipping method is used THEN technique is effective for evaluating Leaf Scald resistance"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_EB4C3C5BDC",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "diseased tissues dry rapidly",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "diseased tissues dry rapidly",
+      "conclusion": {
+        "raw_text": "perithecia formation and maturation will be stopped",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_ONTOLOGY_MAPPING",
+        "requirement": "Create and approve the missing ontology class/property mapping before import.",
+        "implementation_status": "NEEDS_ONTOLOGY_MAPPING",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0608",
+        "implementation_record_id": "LSC_IMPL_181",
+        "source_record_id": "LSC_RULE_009",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "182",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Rapid Drying Exclusion; Rule Type=ENVIRONMENT_RULE; IF Condition 1=diseased tissues dry rapidly; THEN Conclusion=perithecia formation and maturation will be stopped; Rule Direction=Subject_to_Object; Positive or Negative Evidence=EXCLUSIONARY; Feature Importance=MODERATE; Rule Weight=0.5; Confidence Level=MODERATE; Natural or Experimental=NATURAL_FIELD_CONTEXT; Ontology Class=EnvironmentalCondition; Ontology Property=influencedBy; Ontology Mapping ID=LSC_ONT_MAP_009; Evidence Strength=DIRECT; Conflict Risk=LOW; Implementation Target=RULE_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF diseased tissues dry rapidly THEN perithecia formation and maturation will be stopped"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_4A23D4F6D1",
+      "class_id": "CLASS_LEAF_SCALD",
+      "class_name": "Leaf Scald",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "soluble silicon (Si) is applied",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "rice variety is indica",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "field condition is upland",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "soluble silicon (Si) is applied AND rice variety is indica AND field condition is upland",
+      "conclusion": {
+        "raw_text": "disease severity might be reduced",
+        "target_class": "Leaf Scald",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Obtain plant-pathology/domain-expert approval before activation.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0609",
+        "implementation_record_id": "LSC_IMPL_182",
+        "source_record_id": "LSC_RULE_010",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "LeafScald_15_Implementation_Ready_Exact_RiceBlast_Format.xlsx",
+        "source_row_number": "183",
+        "evidence_ids": [],
+        "original_extracted_value": "Rule Name=Conditional Silicon effect; Rule Type=MANAGEMENT_RULE; IF Condition 1=soluble silicon (Si) is applied; Logical Operator 1=AND; IF Condition 2=rice variety is indica; Logical Operator 2=AND; IF Condition 3=field condition is upland; THEN Conclusion=disease severity might be reduced; Rule Direction=Subject_to_Object; Positive or Negative Evidence=CONDITIONAL; Feature Importance=LOW; Rule Weight=0.4; Confidence Level=LOW; Natural or Experimental=NATURAL_FIELD_CONTEXT; Ontology Class=ManagementMeasure; Ontology Property=managedBy; Ontology Mapping ID=LSC_ONT_MAP_010; Evidence Strength=CONDITIONAL; Conflict Risk=HIGH; Validation Requirement=NEEDS_EXPERT_VALIDATION; Implementation Target=RECOMMENDATION_ENGINE; Rule Status=READY",
+        "normalized_implementation_value": "IF soluble silicon (Si) is applied AND rice variety is indica AND field condition is upland THEN disease severity might be reduced"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_E0526D4022",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Specimen is_instance_of Oryza_sativa",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Specimen is_instance_of Oryza_sativa",
+      "conclusion": {
+        "raw_text": "Identity confirmed",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "ACTIVE_CANDIDATE",
+      "runtime_enabled": true,
+      "validation": {
+        "category": "NONE_REQUIRED",
+        "requirement": "NONE_REQUIRED",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0610",
+        "implementation_record_id": "HIMP_001",
+        "source_record_id": "HKG_001",
+        "source_dataset": "10_KG_Triples",
+        "source_document_id": "UPOV_RICE_TG16_9",
+        "citation": "UPOV (2020)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "2",
+        "evidence_ids": [
+          "HEVD_001"
+        ],
+        "original_extracted_value": "Oryza sativa L.",
+        "normalized_implementation_value": "Oryza_sativa"
+      }
+    },
+    {
+      "rule_id": "HRULE_003",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "visual_status == \"Visibly_healthy\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "vigor == \"High_vigor\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "visual_status == \"Visibly_healthy\" AND vigor == \"High_vigor\"",
+      "conclusion": {
+        "raw_text": "Healthy_Rice_Leaf_Candidate",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0611",
+        "implementation_record_id": "HIMP_002",
+        "source_record_id": "HONT_002",
+        "source_dataset": "11_Ontology",
+        "source_document_id": "UPOV_RICE_TG16_9",
+        "citation": "UPOV (2020)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "3",
+        "evidence_ids": [
+          "HEVD_001"
+        ],
+        "original_extracted_value": "Visibly healthy, vigorous, free from important pests/diseases",
+        "normalized_implementation_value": "Healthy_Rice_Leaf_Candidate"
+      }
+    },
+    {
+      "rule_id": "HRULE_001",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "has_component == \"Leaf_blade\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "shape == \"narrow_flat\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "has_component == \"Leaf_blade\" AND shape == \"narrow_flat\"",
+      "conclusion": {
+        "raw_text": "Anatomical match",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "NEEDS_NORMALIZATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0612",
+        "implementation_record_id": "HIMP_003",
+        "source_record_id": "HKG_004",
+        "source_dataset": "10_KG_Triples",
+        "source_document_id": "ARKANSAS_RICE_GROWTH",
+        "citation": "Moldenhauer et al.",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "4",
+        "evidence_ids": [
+          "HEVD_002"
+        ],
+        "original_extracted_value": "narrow, flat, sessile leaf blades",
+        "normalized_implementation_value": "Standard_Leaf_Blade"
+      }
+    },
+    {
+      "rule_id": "HRULE_002",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "green_intensity is in Range(1, 9)",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "green_intensity is in Range(1, 9)",
+      "conclusion": {
+        "raw_text": "Healthy_Rice_Leaf_Candidate",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "CONTEXT_DEPENDENT",
+        "requirement": "NEEDS_NORMALIZATION",
+        "implementation_status": "CONTEXT_DEPENDENT",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0613",
+        "implementation_record_id": "HIMP_004",
+        "source_record_id": "HRULE_002",
+        "source_dataset": "12_Rule_Candidates",
+        "source_document_id": "UPOV_RICE_TG16_9",
+        "citation": "UPOV (2020)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "5",
+        "evidence_ids": [
+          "HEVD_004"
+        ],
+        "original_extracted_value": "green color... very light (1) to very dark (9)",
+        "normalized_implementation_value": "Variable_green_intensity"
+      }
+    },
+    {
+      "rule_id": "HRULE_004",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "exhibits_feature == \"Clear_boundary_delineation\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "exhibits_feature == \"Clear_boundary_delineation\"",
+      "conclusion": {
+        "raw_text": "Disease_Affected_Rice_Leaf",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0614",
+        "implementation_record_id": "HIMP_005",
+        "source_record_id": "HEVD_006",
+        "source_dataset": "09_Evidence",
+        "source_document_id": "CABI_PLANTWISE_DIAGNOSTIC",
+        "citation": "Taylor (2015)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "6",
+        "evidence_ids": [
+          "HEVD_006"
+        ],
+        "original_extracted_value": "clear delineation between healthy and unhealthy tissue",
+        "normalized_implementation_value": "Biotic_Cause_Delineation"
+      }
+    },
+    {
+      "rule_id": "HRULE_009",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "leaf_age == \"Older_lower_leaves\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "phenotype == \"yellowing\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "leaf_age == \"Older_lower_leaves\" AND phenotype == \"yellowing\"",
+      "conclusion": {
+        "raw_text": "Natural_Senescence",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0615",
+        "implementation_record_id": "HIMP_006",
+        "source_record_id": "HRULE_009",
+        "source_dataset": "12_Rule_Candidates",
+        "source_document_id": "CABI_PLANTWISE_DIAGNOSTIC",
+        "citation": "Taylor (2015)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "7",
+        "evidence_ids": [
+          "HEVD_007"
+        ],
+        "original_extracted_value": "yellowed leaf can be a normal sign of aging",
+        "normalized_implementation_value": "Natural_Senescence"
+      }
+    },
+    {
+      "rule_id": "HRULE_005",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lacks_symptom == \"dark_brown_dots\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "green_intensity in Range(1, 9)",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lacks_symptom == \"dark_brown_dots\" AND green_intensity in Range(1, 9)",
+      "conclusion": {
+        "raw_text": "Healthy_Rice_Leaf_Candidate",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "NEEDS_NORMALIZATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0616",
+        "implementation_record_id": "HIMP_007",
+        "source_record_id": "HCMP_001",
+        "source_dataset": "08_Healthy_vs_Disease",
+        "source_document_id": "UPOV_RICE_TG16_9",
+        "citation": "UPOV (2020)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "8",
+        "evidence_ids": [
+          "HEVD_010"
+        ],
+        "original_extracted_value": "dark brown or purplish brown dots",
+        "normalized_implementation_value": "Pathological_Pigment_Exclusion"
+      }
+    },
+    {
+      "rule_id": "HRULE_006",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lacks_symptom == \"spindle_shaped_lesions\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "status == \"Visibly_healthy\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lacks_symptom == \"spindle_shaped_lesions\" AND status == \"Visibly_healthy\"",
+      "conclusion": {
+        "raw_text": "Healthy_Rice_Leaf_Candidate",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0617",
+        "implementation_record_id": "HIMP_008",
+        "source_record_id": "HCMP_002",
+        "source_dataset": "08_Healthy_vs_Disease",
+        "source_document_id": "UPOV_RICE_TG16_9",
+        "citation": "UPOV (2020)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "9",
+        "evidence_ids": [
+          "HEVD_011"
+        ],
+        "original_extracted_value": "spindle shape (tapering at both ends)",
+        "normalized_implementation_value": "Spindle_Lesion_Exclusion"
+      }
+    },
+    {
+      "rule_id": "HRULE_012",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "symptom_type == \"not_identified\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "symptom_type == \"not_identified\"",
+      "conclusion": {
+        "raw_text": "Expert_Review",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0618",
+        "implementation_record_id": "HIMP_009",
+        "source_record_id": "HRULE_012",
+        "source_dataset": "12_Rule_Candidates",
+        "source_document_id": "CABI_PLANTWISE_DIAGNOSTIC",
+        "citation": "Taylor (2015)",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "10",
+        "evidence_ids": [],
+        "original_extracted_value": "guide does not attempt to show all possible symptoms",
+        "normalized_implementation_value": "Expert_Review_Trigger"
+      }
+    },
+    {
+      "rule_id": "HRULE_010",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "cultivar == \"midseason\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "growth_stage == \"vegetative_lag_phase\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "cultivar == \"midseason\" AND growth_stage == \"vegetative_lag_phase\"",
+      "conclusion": {
+        "raw_text": "Lag_Phase_Yellowing",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "CONTEXT_DEPENDENT",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "CONTEXT_DEPENDENT",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0619",
+        "implementation_record_id": "HIMP_010",
+        "source_record_id": "HEVD_008",
+        "source_dataset": "09_Evidence",
+        "source_document_id": "ARKANSAS_RICE_GROWTH",
+        "citation": "Moldenhauer et al.",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "11",
+        "evidence_ids": [
+          "HEVD_008"
+        ],
+        "original_extracted_value": "vegetative lag phase... characterized by yellowing plants",
+        "normalized_implementation_value": "Lag_Phase_Yellowing"
+      }
+    },
+    {
+      "rule_id": "HRULE_011",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "physiological_optimum == \"queried\"",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "evidence == \"not_found\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "physiological_optimum == \"queried\" AND evidence == \"not_found\"",
+      "conclusion": {
+        "raw_text": "Uncertain_Diagnosis",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "LOW",
+      "provisional_weight": 0.5,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "NEEDS_EXPERT_VALIDATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0620",
+        "implementation_record_id": "HIMP_011",
+        "source_record_id": "HEVD_014",
+        "source_dataset": "09_Evidence",
+        "source_document_id": "ARKANSAS_RICE_GROWTH",
+        "citation": "Moldenhauer et al.",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "12",
+        "evidence_ids": [
+          "HEVD_014"
+        ],
+        "original_extracted_value": "Determining optimum temperatures for rice is difficult",
+        "normalized_implementation_value": "Uncertain_Diagnosis"
+      }
+    },
+    {
+      "rule_id": "HRULE_001",
+      "class_id": "CLASS_HEALTHY_RICE_LEAF",
+      "class_name": "Healthy Rice Leaf",
+      "class_type": "Healthy Baseline",
+      "rule_type": "healthy_baseline",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "has_structure == \"hairy_auricles\"",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "has_structure == \"hairy_auricles\"",
+      "conclusion": {
+        "raw_text": "Morphological match",
+        "target_class": "Healthy Rice Leaf",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "STAGING_CANDIDATE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_NORMALIZATION",
+        "requirement": "NEEDS_NORMALIZATION",
+        "implementation_status": "READY",
+        "data_quality_flags": "HEALTHY_SCHEMA_MAPPED; READY_REQUIRES_REVIEW"
+      },
+      "provenance": {
+        "master_record_id": "MKI_0621",
+        "implementation_record_id": "HIMP_012",
+        "source_record_id": "HKG_005",
+        "source_dataset": "10_KG_Triples",
+        "source_document_id": "ARKANSAS_RICE_GROWTH",
+        "citation": "Moldenhauer et al.",
+        "source_file": "Healthy Rice Leaf Implementation Ready.xlsx",
+        "source_row_number": "13",
+        "evidence_ids": [
+          "HEVD_003"
+        ],
+        "original_extracted_value": "sickle-shaped, hairy auricles",
+        "normalized_implementation_value": "Sickle_shaped_hairy_auricles"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_8CCD3A90A0",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [],
+      "condition_text": "",
+      "conclusion": {
+        "raw_text": "",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "MEDIUM",
+      "provisional_weight": 0.65,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "HOLD_PARSE_INCOMPLETE",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate relevance to the deployed leaf-image use case.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0640",
+        "implementation_record_id": "BSP_IMPL_019",
+        "source_record_id": "BSp_SYM_01",
+        "source_dataset": "02_Symptoms",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "20",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Seedling Symptom; Symptom=seedling blight; Plant Part=seedling",
+        "normalized_implementation_value": "symptom=seedling blight | category=Seedling Symptom | plant_part=seedling"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_5C61375E75",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "rice fields are deficient in nutrients, particularly nitrogen",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "rice fields are deficient in nutrients, particularly nitrogen",
+      "conclusion": {
+        "raw_text": "Brown Spot is associated with the environment",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0913",
+        "implementation_record_id": "BSP_IMPL_292",
+        "source_record_id": "BSP_RULE_001",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "293",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=rice fields are deficient in nutrients, particularly nitrogen; THEN=Brown Spot is associated with the environment; Entities=Nitrogen, Brown Spot; Values=deficient; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Evidence Strength=expert consensus; Scope=poor rice crop production environments",
+        "normalized_implementation_value": "IF rice fields are deficient in nutrients, particularly nitrogen THEN Brown Spot is associated with the environment"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_EE3FB34441",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "lesion is on leaf blade",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "is oval",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C3",
+          "raw_text": "necrotic",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "lesion is on leaf blade and is oval and necrotic",
+      "conclusion": {
+        "raw_text": "lesion is surrounded by chlorotic halo",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0914",
+        "implementation_record_id": "BSP_IMPL_293",
+        "source_record_id": "BSP_RULE_002",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "294",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Diagnostic; IF=lesion is on leaf blade and is oval and necrotic; THEN=lesion is surrounded by chlorotic halo; Entities=leaf blade, lesion, chlorotic halo; Values=oval, necrotic; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=rice leaves",
+        "normalized_implementation_value": "IF lesion is on leaf blade and is oval and necrotic THEN lesion is surrounded by chlorotic halo"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_B87B7A8741",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "leaf spots are fully developed",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "leaf spots are fully developed",
+      "conclusion": {
+        "raw_text": "centers are gray or whitish",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "CRITICAL",
+      "provisional_weight": 0.9,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0915",
+        "implementation_record_id": "BSP_IMPL_294",
+        "source_record_id": "BSP_RULE_003",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "295",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Lesion Identification; IF=leaf spots are fully developed; THEN=centers are gray or whitish; Entities=leaf spot, center; Values=fully developed, gray, whitish; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=rice leaves",
+        "normalized_implementation_value": "IF leaf spots are fully developed THEN centers are gray or whitish"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_FA06514D5A",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "variety is susceptible",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "variety is susceptible",
+      "conclusion": {
+        "raw_text": "lesions may reach up to 1 cm in length",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0916",
+        "implementation_record_id": "BSP_IMPL_295",
+        "source_record_id": "BSP_RULE_004",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "296",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Susceptibility; IF=variety is susceptible; THEN=lesions may reach up to 1 cm in length; Entities=susceptible variety, lesion; Values=up to 1 cm; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=susceptible varieties",
+        "normalized_implementation_value": "IF variety is susceptible THEN lesions may reach up to 1 cm in length"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_F28711AB74",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "severity",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "infection is severe",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "infection is severe",
+      "conclusion": {
+        "raw_text": "lesions coalesce and affected area appears yellow",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0917",
+        "implementation_record_id": "BSP_IMPL_296",
+        "source_record_id": "BSP_RULE_005",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "297",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Disease Progression; IF=infection is severe; THEN=lesions coalesce and affected area appears yellow; Entities=infection, lesion, leaf area; Values=severe, coalesce, yellow; Derivation=DIRECT_CONDITIONAL_STATEMENT; Evidence Strength=observational evidence; Scope=leaf blades",
+        "normalized_implementation_value": "IF infection is severe THEN lesions coalesce and affected area appears yellow"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_F40A4F9CF9",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "variety is resistant",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "variety is resistant",
+      "conclusion": {
+        "raw_text": "lesions are pin-head sized dark specks",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0918",
+        "implementation_record_id": "BSP_IMPL_297",
+        "source_record_id": "BSP_RULE_006",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "298",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Host Resistance; IF=variety is resistant; THEN=lesions are pin-head sized dark specks; Entities=resistant variety, lesion; Values=pin-head sized, dark specks; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=resistant varieties",
+        "normalized_implementation_value": "IF variety is resistant THEN lesions are pin-head sized dark specks"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_5C66AE5BF6",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "environment is temperate with low temperature",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "low humidity",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "environment is temperate with low temperature and low humidity",
+      "conclusion": {
+        "raw_text": "survival of conidia on seed is prolonged",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0919",
+        "implementation_record_id": "BSP_IMPL_298",
+        "source_record_id": "BSP_RULE_007",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "299",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=environment is temperate with low temperature and low humidity; THEN=survival of conidia on seed is prolonged; Entities=temperature, humidity, conidia, seed; Values=low, low, prolonged survival; Derivation=DIRECT_CONDITIONAL_STATEMENT; Evidence Strength=scientific fact; Scope=temperate environments; Limitation=post-harvest until next growing season",
+        "normalized_implementation_value": "IF environment is temperate with low temperature and low humidity THEN survival of conidia on seed is prolonged"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_F42B2DDB12",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "environment is humid tropics with high temperature",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "high humidity",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "environment is humid tropics with high temperature and high humidity",
+      "conclusion": {
+        "raw_text": "conditions are unfavorable for survival of conidia on seed",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0920",
+        "implementation_record_id": "BSP_IMPL_299",
+        "source_record_id": "BSP_RULE_008",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "300",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=environment is humid tropics with high temperature and high humidity; THEN=conditions are unfavorable for survival of conidia on seed; Entities=temperature, humidity, conidia, seed; Values=high, high, unfavorable survival; Derivation=DIRECT_CONDITIONAL_STATEMENT; Evidence Strength=scientific fact; Scope=humid tropics; Limitation=throughout the year",
+        "normalized_implementation_value": "IF environment is humid tropics with high temperature and high humidity THEN conditions are unfavorable for survival of conidia on seed"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_BA85F4C28E",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "nitrogen is deficient at the late tillering stage",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "nitrogen is deficient at the late tillering stage",
+      "conclusion": {
+        "raw_text": "rice plant is attacked more easily by B. oryzae",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0921",
+        "implementation_record_id": "BSP_IMPL_300",
+        "source_record_id": "BSP_RULE_009",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "301",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=nitrogen is deficient at the late tillering stage; THEN=rice plant is attacked more easily by B. oryzae; Entities=nitrogen, tillering stage, B. oryzae; Values=deficient, late tillering; Derivation=DIRECT_CONDITIONAL_STATEMENT; Evidence Strength=scientific fact; Scope=rice plants",
+        "normalized_implementation_value": "IF nitrogen is deficient at the late tillering stage THEN rice plant is attacked more easily by B. oryzae"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_06EA583494",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "phosphorus in soil is increased",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "phosphorus in soil is increased",
+      "conclusion": {
+        "raw_text": "may induce more BSp on rice plants",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Validate conditions and outcomes against local images, sensors, or field data.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0922",
+        "implementation_record_id": "BSP_IMPL_301",
+        "source_record_id": "BSP_RULE_010",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "302",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=phosphorus in soil is increased; THEN=may induce more BSp on rice plants; Entities=phosphorus, Brown Spot; Values=more phosphorus; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Evidence Strength=scientific fact; Scope=rice plants",
+        "normalized_implementation_value": "IF phosphorus in soil is increased THEN may induce more BSp on rice plants"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_ED2315CFFC",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "Brown Spot management is required",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "Brown Spot management is required",
+      "conclusion": {
+        "raw_text": "implement good crop husbandry in relation to nutrient and seed health management",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Agronomist and Bangladesh-local applicability validation required.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0923",
+        "implementation_record_id": "BSP_IMPL_302",
+        "source_record_id": "BSP_RULE_011",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "303",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Management; IF=Brown Spot management is required; THEN=implement good crop husbandry in relation to nutrient and seed health management; Entities=Brown Spot, nutrient management, seed health management; Values=good crop husbandry; Derivation=DIRECT_RECOMMENDATION_TRANSFORMATION; Evidence Strength=expert consensus; Scope=Brown Spot control",
+        "normalized_implementation_value": "IF Brown Spot management is required THEN implement good crop husbandry in relation to nutrient and seed health management"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_7F9EAB752D",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "preparing for transplanted rice or for direct sowing",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "preparing for transplanted rice or for direct sowing",
+      "conclusion": {
+        "raw_text": "use high-quality seed to produce healthy seedlings",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Agronomist and Bangladesh-local applicability validation required.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0924",
+        "implementation_record_id": "BSP_IMPL_303",
+        "source_record_id": "BSP_RULE_012",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "304",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Prevention; IF=preparing for transplanted rice or for direct sowing; THEN=use high-quality seed to produce healthy seedlings; Entities=seed, seedlings; Values=high-quality, healthy; Derivation=DIRECT_RECOMMENDATION_TRANSFORMATION; Evidence Strength=expert consensus; Scope=rice cultivation; Limitation=especially important in upland/problematic soils",
+        "normalized_implementation_value": "IF preparing for transplanted rice or for direct sowing THEN use high-quality seed to produce healthy seedlings"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_11CE025968",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "management",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "field sanitation is performed",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "field sanitation is performed",
+      "conclusion": {
+        "raw_text": "plant debris is removed and inoculum level is reduced",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Agronomist and Bangladesh-local applicability validation required.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0925",
+        "implementation_record_id": "BSP_IMPL_304",
+        "source_record_id": "BSP_RULE_013",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "305",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Management; IF=field sanitation is performed; THEN=plant debris is removed and inoculum level is reduced; Entities=field sanitation, plant debris, inoculum; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Evidence Strength=scientific fact; Scope=Brown Spot control",
+        "normalized_implementation_value": "IF field sanitation is performed THEN plant debris is removed and inoculum level is reduced"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_E2B3F55F7E",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "diagnostic",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "host is a susceptible variety with short",
+          "operator": "SOURCE_TEXT"
+        },
+        {
+          "condition_id": "C2",
+          "raw_text": "wide lesions",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "host is a susceptible variety with short and wide lesions",
+      "conclusion": {
+        "raw_text": "Narrow brown leaf spot may be confused with brown spot",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_LOCAL_VALIDATION",
+        "requirement": "Verify direction and discriminative value using the local confusion matrix.",
+        "implementation_status": "NEEDS_LOCAL_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0926",
+        "implementation_record_id": "BSP_IMPL_305",
+        "source_record_id": "BSP_RULE_014",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "306",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Differential Diagnosis; IF=host is a susceptible variety with short and wide lesions; THEN=Narrow brown leaf spot may be confused with brown spot; Entities=susceptible variety, lesion, Narrow brown leaf spot, brown spot; Values=short, wide; Derivation=DIRECT_DIAGNOSTIC_TRANSFORMATION; Evidence Strength=typical phenotype; Scope=susceptible rice varieties",
+        "normalized_implementation_value": "IF host is a susceptible variety with short and wide lesions THEN Narrow brown leaf spot may be confused with brown spot"
+      }
+    },
+    {
+      "rule_id": "EA_RULE_17B7E0E03A",
+      "class_id": "CLASS_BROWN_SPOT",
+      "class_name": "Brown Spot",
+      "class_type": "Disease",
+      "rule_type": "environmental_support",
+      "conditions": [
+        {
+          "condition_id": "C1",
+          "raw_text": "silicon is applied",
+          "operator": "SOURCE_TEXT"
+        }
+      ],
+      "condition_text": "silicon is applied",
+      "conclusion": {
+        "raw_text": "incidence of brown spot in the field is reduced",
+        "target_class": "Brown Spot",
+        "action": "SOURCE_DEFINED_CONCLUSION"
+      },
+      "priority": "HIGH",
+      "provisional_weight": 0.8,
+      "weight_basis": "priority_mapping",
+      "runtime_state": "EVIDENCE_SUPPORTED_HOLD",
+      "runtime_enabled": false,
+      "validation": {
+        "category": "NEEDS_EXPERT_VALIDATION",
+        "requirement": "Cross-disease/cultural-practice context requires expert review before Brown Spot deployment.",
+        "implementation_status": "NEEDS_EXPERT_VALIDATION",
+        "data_quality_flags": ""
+      },
+      "provenance": {
+        "master_record_id": "MKI_0927",
+        "implementation_record_id": "BSP_IMPL_306",
+        "source_record_id": "BSP_RULE_015",
+        "source_dataset": "14_Rule_Candidates",
+        "source_document_id": "IRRI2018_FFD",
+        "citation": "Mew, T. W., Hibino, H., Savary, S., Vera Cruz, C. M., Opulencia, R., and Hettel, G. P., eds. 2018. Rice Diseases: Biology and Selected Management Practices. Los Baños, Philippines: International Rice Research Institute. PDF e-book.",
+        "source_file": "BrownSpot_15_Implementation_Ready (1)(1).xlsx",
+        "source_row_number": "307",
+        "evidence_ids": [],
+        "original_extracted_value": "Category=Environmental Risk; IF=silicon is applied; THEN=incidence of brown spot in the field is reduced; Entities=silicon, brown spot; Values=application; Derivation=DIRECT_ASSOCIATION_TRANSFORMATION; Evidence Strength=scientific fact; Scope=rice field",
+        "normalized_implementation_value": "IF silicon is applied THEN incidence of brown spot in the field is reduced"
+      }
+    }
+  ]
+}
